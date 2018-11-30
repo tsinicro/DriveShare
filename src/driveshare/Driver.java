@@ -12,13 +12,14 @@ package driveshare;
 public class Driver extends User{
     boolean driverPermit;
     String driverLicense;
-    
+    Vehicle driverVehicle;
+
     public Driver(){
         driverPermit = true;
         driverLicense = "";
     }
 
-    
+
     //getters and setters
     public boolean isDriverPermit() {
         return driverPermit;
@@ -36,6 +37,46 @@ public class Driver extends User{
         this.driverLicense = driverLicense;
     }
 
-    
-    
+    public String getVehicleMake() {
+        return driverVehicle.getVehicleMake();
+    }
+
+    public void setVehicleMake(String vehicleMake) {
+        this.driverVehicle.setVehicleMake(vehicleMake);
+    }
+
+    public String getVehicleNumber() {
+        return driverVehicle.getVehicleNumber();
+    }
+
+    public void setVehicleNumber(String vehicleNumber) {
+        this.driverVehicle.setVehicleNumber(vehicleNumber);
+    }
+
+    public String getVehicleColor() {
+        return driverVehicle.getVehicleColor();
+    }
+
+    public void setVehicleColor(String vehicleColor) {
+        this.driverVehicle.setVehicleColor(vehicleColor);
+    }
+
+    public int getVehicleCapacity() {
+        return driverVehicle.getVehicleCapacity();
+    }
+
+    public void setVehicleCapacity(int vehicleCapacity) {
+        this.driverVehicle.setVehicleCapacity(vehicleCapacity);
+    }
+
+    public String getVehicleType() {
+        return driverVehicle.getVehicleType();
+    }
+
+    public void setVehicleType(String vehicleType) {
+        this.driverVehicle.setVehicleType(vehicleType);
+    }
+
+
+
 }
