@@ -4,8 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Jacob/Documents/DriveShare/src/driveshare/CreateAccount.java</file>
+            <file>file:/C:/Users/Jacob/Documents/DriveShare/src/driveshare/PasswordForgot.java</file>
             <file>file:/C:/Users/Jacob/Documents/DriveShare/src/driveshare/DriveShare.java</file>
+            <file>file:/C:/Users/Jacob/Documents/DriveShare/src/driveshare/Passenger.java</file>
+            <file>file:/C:/Users/Jacob/Documents/DriveShare/src/driveshare/DriverAvaliability.java</file>
             <file>file:/C:/Users/Jacob/Documents/DriveShare/src/driveshare/Login.java</file>
+            <file>file:/C:/Users/Jacob/Documents/DriveShare/src/driveshare/PassengerConfirmation.java</file>
         </group>
     </open-files>
 </project-private>
