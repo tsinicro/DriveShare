@@ -256,9 +256,9 @@ public class CreateAccount extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         if(isDriver.isSelected()){
-            
-        } else{
-            
+            Driver newDriver = new Driver();
+        } else if(isPassenger.isSelected()){
+            Passenger newPass = new Passenger();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -9,27 +9,15 @@ package driveshare;
  *
  * @author tsini
  */
-public class Passenger {
+public class Passenger extends User{
     boolean passDisability; 
-    int passNum;
     
     public Passenger(){
-    passDisability = false;
-    passNum =0;}
-
-    public boolean isPassDisability() {
-        return passDisability;
+        passDisability = false;
     }
 
-    public void setPassDisability(boolean passDisability) {
-        this.passDisability = passDisability;
-    }
-
-    public int getPassNum() {
-        return passNum;
-    }
-
-    public void setPassNum(int passNum) {
-        this.passNum = passNum;
-    }
+    //getters and setters
+    
+    
+    
 }

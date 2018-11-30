@@ -10,41 +10,34 @@ package driveshare;
  * @author tsini
  */
 public class Contact{
-      String homePhoneNumber;
-     String workPhoneNumber;
-   String email;
+        String phoneNumber;
+        String email;
      
     public Contact() {
-        homePhoneNumber = "";
-        workPhoneNumber = "";
-       email = "";
-               
+        phoneNumber = "";
+        email = "";           
     }
-    public Contact(String hp, String wp){
-    homePhoneNumber = hp;
-    workPhoneNumber = wp;}
-    //methods
-    //get and set
-    public void setHomePhone(String hp){
-        homePhoneNumber = hp;
+
+    public Contact(String phoneNumber, String email) {
+        this.phoneNumber = phoneNumber;
+        this.email = email;
     }
-    
-    public String getHomePhone(){
-       return homePhoneNumber; 
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
-     public void setWorkPhone(String wp){
-        workPhoneNumber = wp;
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
-    
-    public String getWorkPhoneNumber(){
-       return  workPhoneNumber; 
+
+    public String getEmail() {
+        return email;
     }
-     public void setEmail(String e){
-        email = e;
+
+    public void setEmail(String email) {
+        this.email = email;
     }
     
-    public String getEmail(){
-       return email; 
-    }
 }
 

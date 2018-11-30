@@ -9,14 +9,17 @@ package driveshare;
  *
  * @author tsini
  */
-public class Driver {
+public class Driver extends User{
     boolean driverPermit;
     String driverLicense;
     
     public Driver(){
-    driverPermit = true;
-     driverLicense = "";}
+        driverPermit = true;
+        driverLicense = "";
+    }
 
+    
+    //getters and setters
     public boolean isDriverPermit() {
         return driverPermit;
     }
@@ -32,5 +35,7 @@ public class Driver {
     public void setDriverLicense(String driverLicense) {
         this.driverLicense = driverLicense;
     }
+
+    
     
 }

@@ -15,13 +15,16 @@ public class Vehicle {
     String vehicleColor;
     int vehicleCapacity;
     String vehicleType;
- public Vehicle(){
-    vehicleMake ="";
-    vehicleNumber = "";
-    vehicleColor = "";
-    vehicleCapacity = 0;
-    vehicleType= "";
+    
+    
+    public Vehicle(){
+        vehicleMake ="";
+        vehicleNumber = "";
+        vehicleColor = "";
+        vehicleCapacity = 0;
+        vehicleType= "";
     }
+
     public String getVehicleMake() {
         return vehicleMake;
     }
@@ -61,5 +64,7 @@ public class Vehicle {
     public void setVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
     }
+    
+    
    
 }

@@ -10,67 +10,64 @@ package driveshare;
  * @author tsini
  */
 public class Address{
-      String streetAddress1;
-     String streetAddress2;
-   String city;
-   String state;
-   String country; 
-   String ZIP;
+    String streetAddress;
+    String city;
+    String state;
+    String country; 
+    String zipCode;
      
     public Address() {
-       streetAddress1="";
-      streetAddress2="";
-   city="";
-   state="";
-   country=""; 
-    ZIP = "";
-               
-    }
-    public Address(String s1, String s2){
-    streetAddress1=s1;
-      streetAddress2=s2;}
-    //methods
-    //get and set
-    public void setstreetAddress1(String s1){
-       streetAddress1= s1;
+        streetAddress="";
+        city="";
+        state="";
+        country=""; 
+        zipCode = "";               
     }
     
-    public String getstreetAddress1(){
-       return streetAddress1; 
+    public Address(String s1){
+        streetAddress=s1;
     }
-    public void setstreetAddress(String s2){
-       streetAddress2= s2;
-    }
+
     
-    public String getstreetAddress2(){
-       return streetAddress2; 
+    //getters and setters
+    public String getStreetAddress() {
+        return streetAddress;
     }
-     public void setCity(String c){
-        city = c;
+
+    public void setStreetAddress(String streetAddress1) {
+        this.streetAddress = streetAddress1;
     }
-    
-    public String getCity(){
-       return city; 
+
+    public String getCity() {
+        return city;
     }
-     public void setCountry(String cn){
-        country = cn;
+
+    public void setCity(String city) {
+        this.city = city;
     }
-    
-    public String getCountry(){
-       return country; 
+
+    public String getState() {
+        return state;
     }
-    public void setZip(String z){
-        ZIP = z;
+
+    public void setState(String state) {
+        this.state = state;
     }
-    
-    public String getZip(){
-       return ZIP; 
+
+    public String getCountry() {
+        return country;
     }
-    public void setState(String s){
-        state= s;
+
+    public void setCountry(String country) {
+        this.country = country;
     }
-    
-    public String getState(){
-       return state; 
+
+    public String getZipCode() {
+        return zipCode;
     }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
 }

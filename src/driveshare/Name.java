@@ -9,41 +9,45 @@ package driveshare;
  *
  * @author tsini
  */
-public class Name extends User{
-      String firstname;
-     String middlename;
-   String lastname;
+public class Name{
+    String firstName;
+    String middleName;
+    String lastName;
      
     public Name() {
-        firstname = "";
-        middlename = "";
-        lastname = "";
-               
+        firstName = "";
+        middleName = "";
+        lastName = "";       
     }
     public Name(String fn, String ln){
-    firstname= fn;
-    lastname = ln;}
-    //methods
-    //get and set
-    public void setFirstname(String fn){
-        firstname = fn;
+        firstName= fn;
+        lastName = ln;
     }
     
-    public String getFirstname(){
-       return firstname; 
+    //getters and setters
+
+    public String getFirstName() {
+        return firstName;
     }
-     public void setMiddlename(String mn){
-        middlename = mn;
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
     
-    public String getMiddlename(){
-       return middlename; 
-    }
-     public void setLastname(String ln){
-        lastname= ln;
-    }
-    
-    public String getLastname(){
-       return lastname; 
-    }
 }
