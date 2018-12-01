@@ -28,7 +28,7 @@ public class PassengerAvaliability extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        passengersCombo = new javax.swing.JComboBox<>();
+        passengersCombo = new javax.swing.JComboBox<String>();
         backBtn = new javax.swing.JButton();
         selectBtn = new javax.swing.JButton();
 
@@ -37,11 +37,21 @@ public class PassengerAvaliability extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("List of Passengers");
 
-        passengersCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name + # of Passengers" }));
+        passengersCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Name + # of Passengers" }));
 
         backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
 
         selectBtn.setText("Select");
+        selectBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,6 +85,18 @@ public class PassengerAvaliability extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        dispose();
+        DriverGUI p = new DriverGUI();
+        p.setVisible(true);
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void selectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectBtnActionPerformed
+        dispose();
+        DriverConfirmation p = new DriverConfirmation();
+        p.setVisible(true);
+    }//GEN-LAST:event_selectBtnActionPerformed
 
     /**
      * @param args the command line arguments
