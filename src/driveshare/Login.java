@@ -75,7 +75,7 @@ public class Login extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(forgotPasswordBtn))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
+                        .addGap(126, 126, 126)
                         .addComponent(jLabel1)))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
