@@ -7,7 +7,7 @@ package driveshare;
 
 /**
  *
- * @author tsini
+ * @author shakespeare
  */
 public class PasswordForgot extends javax.swing.JFrame {
 
