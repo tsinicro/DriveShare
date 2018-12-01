@@ -17,12 +17,12 @@ public class CreateAccount extends javax.swing.JPanel {
     public CreateAccount() {
         initComponents();
     }
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -257,8 +257,27 @@ public class CreateAccount extends javax.swing.JPanel {
         // TODO add your handling code here:
         if(isDriver.isSelected()){
             Driver newDriver = new Driver();
+            newDriver.setFirstname(fName.getText());
+            newDriver.setLastname(lName.getText());
+            newDriver.setStreetAddress(address.getText());
+            newDriver.setCity(city.getText());
+            newDriver.setState(state.getSelectedItem().toString());
+            newDriver.setZipCode(zipCode.getText());
+            newDriver.setEmail(emailAddress.getText());
+            newDriver.setPassword(password.getText());
+            DriveShare.driversList.add(newDriver);
+
         } else if(isPassenger.isSelected()){
             Passenger newPass = new Passenger();
+            newPass.setFirstname(fName.getText());
+            newPass.setLastname(lName.getText());
+            newPass.setStreetAddress(address.getText());
+            newPass.setCity(city.getText());
+            newPass.setState(state.getSelectedItem().toString());
+            newPass.setZipCode(zipCode.getText());
+            newPass.setEmail(emailAddress.getText());
+            newPass.setPassword(password.getText());
+            DriveShare.passengersList.add(newPass);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

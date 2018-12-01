@@ -11,8 +11,8 @@ import java.util.*;
  * @author tsini
  */
 public class DriveShare {
-    public HashMap<String, Integer> passengersList = new HashMap<>();
-    public HashMap<String, Integer> driversList = new HashMap<>();
+    public static ArrayList<Passenger> passengersList = new ArrayList<Passenger>();
+    public static ArrayList<Driver> driversList = new ArrayList<Driver>();
     /**
      * @param args the command line arguments
      */
