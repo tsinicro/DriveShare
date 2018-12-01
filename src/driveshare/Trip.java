@@ -12,7 +12,7 @@ package driveshare;
 public class Trip {
     //variables
     float miles;
-    Address pickup;
+    Location pickup;
     Address destination;
     String pickupTime;
     String date;
@@ -25,7 +25,7 @@ public class Trip {
         return miles;
     }
     
-    public Address getPickupLoc(){
+    public Location getPickupLoc(){
         return pickup;
     }
     
@@ -58,7 +58,7 @@ public class Trip {
         miles = n;
     }
     
-    public void setPickup(Address n){
+    public void setPickup(Location n){
         pickup = n;
     }
     
@@ -88,9 +88,9 @@ public class Trip {
     
     //method to print out a trip
     public void printTrip(Trip a){
-        System.out.println(a.getDriver() + "   " + a.driver.getPhoneNumber());
-        System.out.println(a.getPassenger() + "   " + a.passenger.getPhoneNumber());
-        System.out.println("from" + a.getPickupLoc() + "to " + a.getDestinationLoc());
+        System.out.println(a.driver.getName() + "   " + a.driver.getPhoneNumber());
+        System.out.println(a.passenger.getName() + "   " + a.passenger.getPhoneNumber());
+        pickup.printPULoc();
         System.out.println("Pickup Time: " + a.getDate() + " " + a.getPUTime());
         System.out.println("Number of Passengers: " + a.getNumPass());
     }

@@ -17,7 +17,18 @@ public class Passenger extends User{
     }
 
     //getters and setters
+    public boolean getDis(){
+        return passDisability;
+    }
     
+    public void setPassengerDisability(boolean n){
+        passDisability = n;
+    }
     
+    //method to get passenger full name
+    public String getName(){
+        String n = this.getFirstname() + " " + this.getLastname();
+        return n;
+    }
     
 }
