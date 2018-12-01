@@ -9,7 +9,7 @@ package driveshare;
  *
  * @author smit3
  */
-public class Location {
+public class Location implements Print {
     //variables
     Address pickup;
     String description;
