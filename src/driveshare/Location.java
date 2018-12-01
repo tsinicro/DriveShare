@@ -33,8 +33,13 @@ public class Location {
     }
     
     //method to print out description
-    public void printDescription(){
-        System.out.println("\n" + description + "\n");
+    public void printPULoc(){
+        System.out.println(pickup.getAddress() + "\n" + description + "\n");
     }
     
+    //constructor
+    public Location(Address pu, String des){
+        pickup = pu;
+        description = des;
+    }
 }

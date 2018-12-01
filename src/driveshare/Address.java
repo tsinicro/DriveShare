@@ -69,5 +69,11 @@ public class Address{
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
+    
+    //method to get full Address
+    public String getAddress(){
+       String n = (streetAddress + "\n" + city + ", " + state + " " + zipCode + " " + country);
+       return n;
+    }
 
 }

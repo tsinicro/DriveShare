@@ -65,6 +65,12 @@ public class Driver extends User{
     public void setVehicleType(String vehicleType) {
         this.driverVehicle.setVehicleType(vehicleType);
     }
+    
+    //method to get driver full name
+    public String getName(){
+        String n = this.getFirstname() + " " + this.getLastname();
+        return n;
+    }
 
 
 
