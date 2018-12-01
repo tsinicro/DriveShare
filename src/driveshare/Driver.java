@@ -10,25 +10,14 @@ package driveshare;
  * @author tsini
  */
 public class Driver extends User{
-    boolean driverPermit;
     String driverLicense;
     Vehicle driverVehicle;
 
     public Driver(){
-        driverPermit = true;
         driverLicense = "";
     }
 
-
     //getters and setters
-    public boolean isDriverPermit() {
-        return driverPermit;
-    }
-
-    public void setDriverPermit(boolean driverPermit) {
-        this.driverPermit = driverPermit;
-    }
-
     public String getDriverLicense() {
         return driverLicense;
     }
