@@ -51,6 +51,11 @@ public class Login extends javax.swing.JFrame {
         forgotPasswordBtn.setText("Forgot Password?");
 
         createBtn.setText("Create Account");
+        createBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createBtnActionPerformed(evt);
+            }
+        });
 
         loginBtn.setText("Login");
 
@@ -105,6 +110,10 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createBtnActionPerformed
 
     /**
      * @param args the command line arguments
