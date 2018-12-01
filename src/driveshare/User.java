@@ -9,7 +9,7 @@ package driveshare;
  *
  * @author tsini
  */
-public class User {
+public class User implements Print{
     int userID;
     String password;
     Name userName;
@@ -115,5 +115,16 @@ public class User {
     public void setEmail(String email) {
         this.userContact.setEmail(email);
     }
+    
+    //PRINT methods
+    public String getFull(){
+        String n = userName.getFull();
+        return n;
+    }
+    
+    public void print(){
+        System.out.println(this.getFull());
+    }
+    
 
 }

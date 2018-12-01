@@ -9,7 +9,7 @@ package driveshare;
  *
  * @author tsini
  */
-public class Driver extends User{
+public class Driver extends User implements Print{
     String driverLicense;
     Vehicle driverVehicle;
 
@@ -65,11 +65,16 @@ public class Driver extends User{
     public void setVehicleType(String vehicleType) {
         this.driverVehicle.setVehicleType(vehicleType);
     }
+
     
-    //method to get driver full name
-    public String getName(){
-        String n = this.getFirstname() + " " + this.getLastname();
+    //PRINT methods
+    public String getFull(){
+        String n = (userName.getFull() + "\n" +  "\n" + this.getDriverLicense());
         return n;
+    }
+    
+    public void print(){
+        System.out.println(this.getFull());
     }
 
 

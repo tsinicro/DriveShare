@@ -9,7 +9,7 @@ package driveshare;
  *
  * @author tsini
  */
-public class Vehicle {
+public class Vehicle implements Print{
     String vehicleMake;
     String vehicleNumber;
     String vehicleColor;
@@ -63,6 +63,16 @@ public class Vehicle {
 
     public void setVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
+    }
+    
+    //PRINT methods
+    public String getFull(){
+        String n = this.getVehicleColor() + " " + this.getVehicleMake() + " " + this.getVehicleType();
+        return n;
+    }
+    
+    public void print(){
+        System.out.println(this.getFull());
     }
     
     

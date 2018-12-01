@@ -32,9 +32,14 @@ public class Location {
         description = n;
     }
     
-    //method to print out description
-    public void printPULoc(){
-        System.out.println(pickup.getAddress() + "\n" + description + "\n");
+    //PRINT methods
+    public String getFull(){
+        String n = (pickup.getFull() + "\n" + description);
+        return n;
+    }
+    
+    public void print(){
+        System.out.println(this.getFull());
     }
     
     //constructor

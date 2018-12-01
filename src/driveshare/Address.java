@@ -9,7 +9,7 @@ package driveshare;
  *
  * @author tsini
  */
-public class Address{
+public class Address implements Print{
     String streetAddress;
     String city;
     String state;
@@ -70,10 +70,14 @@ public class Address{
         this.zipCode = zipCode;
     }
     
-    //method to get full Address
-    public String getAddress(){
-       String n = (streetAddress + "\n" + city + ", " + state + " " + zipCode + " " + country);
-       return n;
+    //PRINT methods
+    public String getFull(){
+        String n = (streetAddress + "\n" + city + ", " + state + " " + zipCode);
+        return n;
+    }
+    
+    public void print(){
+        System.out.println(this.getFull());
     }
 
 }

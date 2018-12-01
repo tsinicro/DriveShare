@@ -9,7 +9,7 @@ package driveshare;
  *
  * @author tsini
  */
-public class Passenger extends User{
+public class Passenger extends User implements Print{
     boolean passDisability; 
     
     public Passenger(){
@@ -31,4 +31,13 @@ public class Passenger extends User{
         return n;
     }
     
+    //PRINT method 
+    public String getFull(){
+        String n = (userName.getFull() + " " + userContact.getFull());
+        return n;
+    }
+    
+    public void print(){
+        System.out.println(this.getFull());
+    }
 }

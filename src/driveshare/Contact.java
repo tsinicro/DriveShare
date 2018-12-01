@@ -9,7 +9,7 @@ package driveshare;
  *
  * @author tsini
  */
-public class Contact{
+public class Contact implements Print{
         String phoneNumber;
         String email;
      
@@ -37,6 +37,16 @@ public class Contact{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    //PRINT methods
+    public String getFull(){
+        String n = (phoneNumber + " " + email);
+        return n;
+    }
+    
+    public void print(){
+        System.out.println(this.getFull());
     }
     
 }

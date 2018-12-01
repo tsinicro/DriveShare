@@ -88,9 +88,8 @@ public class Trip {
     
     //method to print out a trip
     public void printTrip(Trip a){
-        System.out.println(a.driver.getName() + "   " + a.driver.getPhoneNumber());
-        System.out.println(a.passenger.getName() + "   " + a.passenger.getPhoneNumber());
-        pickup.printPULoc();
+        a.driver.print();
+        a.passenger.print();
         System.out.println("Pickup Time: " + a.getDate() + " " + a.getPUTime());
         System.out.println("Number of Passengers: " + a.getNumPass());
     }
