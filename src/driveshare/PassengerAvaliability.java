@@ -87,15 +87,12 @@ public class PassengerAvaliability extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        dispose();
-        DriverGUI p = new DriverGUI();
-        p.setVisible(true);
+        new DriverGUI().setVisible(true);
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void selectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectBtnActionPerformed
-        dispose();
-        DriverConfirmation p = new DriverConfirmation();
-        p.setVisible(true);
+        //new DriverConfirmation().setVisible(true);
+        //this.setVisible(false);
     }//GEN-LAST:event_selectBtnActionPerformed
 
     /**

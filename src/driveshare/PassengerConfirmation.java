@@ -45,14 +45,11 @@ public class PassengerConfirmation extends javax.swing.JFrame {
 
         jLabel1.setText("Driver:");
 
-        jTextField1.setText("jTextField1");
-
         jLabel2.setText("Phone:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel3.setText("Passenger Confirmation");
 
-        jTextField2.setText("jTextField2");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -61,15 +58,15 @@ public class PassengerConfirmation extends javax.swing.JFrame {
 
         jLabel4.setText("Pickup Time: ");
 
-        jTextField3.setText("jTextField3");
-
         jLabel5.setText("Pickup Location:");
 
-        jTextField4.setText("jTextField4");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Destination:");
-
-        jTextField5.setText("jTextField5");
 
         jButton1.setText("Cancel Ride");
 
@@ -158,6 +155,10 @@ public class PassengerConfirmation extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
     /**
      * @param args the command line arguments
