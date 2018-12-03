@@ -54,7 +54,7 @@ public class User implements Print {
         this.userName.setLastName(lastname);
     }
 
-    public String getStreetAddress1() {
+    public String getStreetAddress() {
         return this.userAddress.getStreetAddress();
     }
 

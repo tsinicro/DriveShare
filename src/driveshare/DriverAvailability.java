@@ -29,7 +29,7 @@ public class DriverAvailability extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        avaliableDriversCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jacob - 123-456-7890" }));
+        avaliableDriversCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jay - 123-456-7890" }));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("Driver Availability");

@@ -33,12 +33,12 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         emailText = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        passwordText = new javax.swing.JTextField();
         forgotPasswordBtn = new javax.swing.JButton();
         createBtn = new javax.swing.JButton();
         loginBtn = new javax.swing.JButton();
         isDriver = new javax.swing.JRadioButton();
         isPassenger = new javax.swing.JRadioButton();
+        passwordText = new javax.swing.JPasswordField();
 
         jLabel2.setText("jLabel2");
 
@@ -88,17 +88,20 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel3))
-                            .addGap(10, 10, 10)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(32, 32, 32))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(createBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(forgotPasswordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(passwordText, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(emailText, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(loginBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(loginBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(passwordText))
                             .addGap(61, 61, 61))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addGap(4, 4, 4)
@@ -117,12 +120,12 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(emailText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(emailText, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(isDriver)
@@ -157,7 +160,7 @@ public class Login extends javax.swing.JFrame {
                 boolean found = false;
                 for (int i = 0; i < driversList.size() && found == false; i++) {
                     //Check for matching credentials
-                    if (driversList.get(i).getEmail().equalsIgnoreCase(emailText.getText()) && driversList.get(i).getPassword().equalsIgnoreCase(passwordText.getText())) {
+                    if (driversList.get(i).getEmail().equalsIgnoreCase(emailText.getText()) && driversList.get(i).getPassword().equals(passwordText.getText())) {
                         //Assign global driver
                         currentDriver = driversList.get(i);
                         found = true;
@@ -166,6 +169,7 @@ public class Login extends javax.swing.JFrame {
                 if (found == true) {
                     //Begin driver GUI
                     new DriverGUI().setVisible(true);
+                    this.dispose();
                 } else {
                     new Error("Account not found.").setVisible(true);
                 }
@@ -174,7 +178,7 @@ public class Login extends javax.swing.JFrame {
                 boolean found = false;
                 for (int i = 0; i < passengersList.size() && found == false; i++) {
                     //Check for matching credentials
-                    if (passengersList.get(i).getEmail().equalsIgnoreCase(emailText.getText()) && passengersList.get(i).getPassword().equalsIgnoreCase(passwordText.getText())) {
+                    if (passengersList.get(i).getEmail().equalsIgnoreCase(emailText.getText()) && passengersList.get(i).getPassword().equals(passwordText.getText())) {
                         //Assign global passenger
                         currentPassenger = passengersList.get(i);
                         found = true;
@@ -183,6 +187,7 @@ public class Login extends javax.swing.JFrame {
                 if (found == true) {
                     //Begin passenger GUI
                     new Schedule().setVisible(true);
+                    this.dispose();
                 } else {
                     new Error("Account not found.").setVisible(true);
                 }
@@ -243,6 +248,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JButton loginBtn;
-    private javax.swing.JTextField passwordText;
+    private javax.swing.JPasswordField passwordText;
     // End of variables declaration//GEN-END:variables
 }

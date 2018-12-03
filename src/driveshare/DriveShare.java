@@ -35,7 +35,35 @@ public class DriveShare {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //Begin GUI
+        createDemoUsers();
         new Login().setVisible(true);
+    }
+
+    public static void createDemoUsers() {
+        //Daisy
+        Passenger daisy = new Passenger();
+        daisy.setFirstname("Daisy");
+        daisy.setLastname("Buchanan");
+        daisy.setStreetAddress("205 North Russell Street");
+        daisy.setCity("West Lafayette");
+        daisy.setState("Indiana");
+        daisy.setZipCode("47906");
+        daisy.setEmail("daisy@gmail.com");
+        daisy.setPassword("password");
+        passengersList.add(daisy);
+
+        //Jay 
+        Driver jay = new Driver();
+        jay.setFirstname("Jay");
+        jay.setLastname("Gatsby");
+        jay.setStreetAddress("1016 W Stadium Ave");
+        jay.setCity("West Lafayette");
+        jay.setState("Indiana");
+        jay.setZipCode("47906");
+        jay.setEmail("jay@gmail.com");
+        jay.setPassword("password");
+        jay.setDriverLicense("1234-56-7890");
+        driversList.add(jay);
     }
 
 }
