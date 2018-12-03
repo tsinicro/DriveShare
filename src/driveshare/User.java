@@ -1,22 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package driveshare;
 
 /**
  *
  * @author tsini
  */
-public class User implements Print{
+public class User implements Print {
+
     int userID;
     String password;
     Name userName = new Name();
     Address userAddress = new Address();
     Contact userContact = new Contact();
-
-
 
     //getters and setters for USER
     public int getUserID() {
@@ -35,7 +29,7 @@ public class User implements Print{
         this.password = password;
     }
 
-    //namegetter/setters
+    //Name getter/setters
     public String getFirstname() {
         return userName.getFirstName();
     }
@@ -115,16 +109,15 @@ public class User implements Print{
     public void setEmail(String email) {
         this.userContact.setEmail(email);
     }
-    
+
     //PRINT methods
-    public String getFull(){
+    public String getFull() {
         String n = userName.getFull();
         return n;
     }
-    
-    public void print(){
+
+    public void print() {
         System.out.println(this.getFull());
     }
-    
 
 }

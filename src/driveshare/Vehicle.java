@@ -1,30 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package driveshare;
 
 /**
  *
  * @author tsini
  */
-public class Vehicle implements Print{
+public class Vehicle implements Print {
+
     String vehicleMake;
     String vehicleNumber;
     String vehicleColor;
     int vehicleCapacity;
     String vehicleType;
-    
-    
-    public Vehicle(){
-        vehicleMake ="";
+
+    public Vehicle() {
+        vehicleMake = "";
         vehicleNumber = "";
         vehicleColor = "";
         vehicleCapacity = 0;
-        vehicleType= "";
+        vehicleType = "";
     }
 
+    //Getters and setters
     public String getVehicleMake() {
         return vehicleMake;
     }
@@ -64,17 +60,15 @@ public class Vehicle implements Print{
     public void setVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
     }
-    
+
     //PRINT methods
-    public String getFull(){
+    public String getFull() {
         String n = this.getVehicleColor() + " " + this.getVehicleMake() + " " + this.getVehicleType();
         return n;
     }
-    
-    public void print(){
+
+    public void print() {
         System.out.println(this.getFull());
     }
-    
-    
-   
+
 }
