@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package driveshare;
 
 /**
@@ -142,26 +137,29 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
-            new CreateAccount().setVisible(true);
-            this.dispose();
+        new CreateAccount().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_createBtnActionPerformed
 
     private void forgotPasswordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPasswordBtnActionPerformed
-            new PasswordForgot().setVisible(true);
-            this.dispose();
+        new PasswordForgot().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_forgotPasswordBtnActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-        // TODO add your handling code here:
         try {
-        if (isDriver.isSelected()) {
-            new DriverGUI().setVisible(true);
-        } else if (isPassenger.isSelected()) {
-            new Schedule().setVisible(true);
-        } else {
-            new Error("Please select account type.").setVisible(true);
-        }
+            if (isDriver.isSelected()) {
+                //Begin driver GUI
+                new DriverGUI().setVisible(true);
+            } else if (isPassenger.isSelected()) {
+                //Begin passenger GUI
+                new Schedule().setVisible(true);
+            } else {
+                //If account type isn't specified
+                new Error("Please select account type.").setVisible(true);
+            }
         } catch (Exception e) {
+            //If something unexpected goes wrong
             new Error("Login failed.").setVisible(true);
         }
     }//GEN-LAST:event_loginBtnActionPerformed
@@ -169,7 +167,6 @@ public class Login extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
