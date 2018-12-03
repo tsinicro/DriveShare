@@ -231,38 +231,38 @@ public class CreateAccount extends javax.swing.JFrame {
     private void createAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountButtonActionPerformed
         // TODO add your handling code here:
         try {
-        if (isDriver.isSelected()) {
-            Driver newDriver = new Driver();
-            newDriver.setFirstname(fName.getText());
-            newDriver.setLastname(lName.getText());
-            newDriver.setStreetAddress(address.getText());
-            newDriver.setCity(city.getText());
-            newDriver.setState(state.getSelectedItem().toString());
-            newDriver.setZipCode(zipCode.getText());
-            newDriver.setEmail(emailAddress.getText());
-            newDriver.setPassword(password.getText());
-            newDriver.setDriverLicense(licenseNumber.getText());
-            DriveShare.driversList.add(newDriver);
-            
-            new DriverGUI().setVisible(true);
-            this.setVisible(false);
-        } else if (isPassenger.isSelected()) {
-            Passenger newPass = new Passenger();
-            newPass.setFirstname(fName.getText());
-            newPass.setLastname(lName.getText());
-            newPass.setStreetAddress(address.getText());
-            newPass.setCity(city.getText());
-            newPass.setState(state.getSelectedItem().toString());
-            newPass.setZipCode(zipCode.getText());
-            newPass.setEmail(emailAddress.getText());
-            newPass.setPassword(password.getText());
-            DriveShare.passengersList.add(newPass);
-            
-            new Schedule().setVisible(true);
-            this.setVisible(false);
-        } else {
-            new Error("Please select account type.").setVisible(true);
-        }
+            if (isDriver.isSelected()) {
+                Driver newDriver = new Driver();
+                newDriver.setFirstname(fName.getText());
+                newDriver.setLastname(lName.getText());
+                newDriver.setStreetAddress(address.getText());
+                newDriver.setCity(city.getText());
+                newDriver.setState(state.getSelectedItem().toString());
+                newDriver.setZipCode(zipCode.getText());
+                newDriver.setEmail(emailAddress.getText());
+                newDriver.setPassword(password.getText());
+                newDriver.setDriverLicense(licenseNumber.getText());
+                DriveShare.driversList.add(newDriver);
+
+                new DriverGUI().setVisible(true);
+                this.setVisible(false);
+            } else if (isPassenger.isSelected()) {
+                Passenger newPass = new Passenger();
+                newPass.setFirstname(fName.getText());
+                newPass.setLastname(lName.getText());
+                newPass.setStreetAddress(address.getText());
+                newPass.setCity(city.getText());
+                newPass.setState(state.getSelectedItem().toString());
+                newPass.setZipCode(zipCode.getText());
+                newPass.setEmail(emailAddress.getText());
+                newPass.setPassword(password.getText());
+                DriveShare.passengersList.add(newPass);
+
+                new Schedule().setVisible(true);
+                this.setVisible(false);
+            } else {
+                new Error("Please select account type.").setVisible(true);
+            }
         } catch (Exception e) {
             new Error("Account creation failed.").setVisible(true);
         }
@@ -271,13 +271,11 @@ public class CreateAccount extends javax.swing.JFrame {
     private void isDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isDriverActionPerformed
         licenseNumber.setVisible(true);
         licenseNumberLabel.setVisible(true);
-        this.validate();
     }//GEN-LAST:event_isDriverActionPerformed
 
     private void isPassengerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isPassengerActionPerformed
         licenseNumber.setVisible(false);
         licenseNumberLabel.setVisible(false);
-        this.validate();
     }//GEN-LAST:event_isPassengerActionPerformed
 
     /**
