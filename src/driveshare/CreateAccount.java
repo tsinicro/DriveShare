@@ -224,41 +224,64 @@ public class CreateAccount extends javax.swing.JFrame {
     }//GEN-LAST:event_clearFormButtonActionPerformed
 
     private void createAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountButtonActionPerformed
-        try {
+        //Check for blank fields
+        if (fName.getText().equals("") || lName.getText().equals("") || address.getText().equals("") || city.getText().equals("") || zipCode.getText().equals("") || password.getText().equals("")) {
+            new Error("Fields can't be blank.").setVisible(true);
+            //Check for invalid zipcode
+        } else if (zipCode.getText().length() != 5) {
+            new Error("ZIP length must be five.").setVisible(true);
+            //Check for invalid email
+        } else if (emailAddress.getText().indexOf('@') == -1 || emailAddress.getText().indexOf('.') == -1) {
+            new Error("Email is invalid.").setVisible(true);
+        } else {
             if (isDriver.isSelected()) {
-                Driver newDriver = new Driver();
-                newDriver.setFirstname(fName.getText());
-                newDriver.setLastname(lName.getText());
-                newDriver.setStreetAddress(address.getText());
-                newDriver.setCity(city.getText());
-                newDriver.setState(state.getSelectedItem().toString());
-                newDriver.setZipCode(zipCode.getText());
-                newDriver.setEmail(emailAddress.getText());
-                newDriver.setPassword(password.getText());
-                newDriver.setDriverLicense(licenseNumber.getText());
-                DriveShare.driversList.add(newDriver);
+                //Check for invalid .license number
+                if (licenseNumber.getText().length() != 10) {
+                    new Error("License number length must be ten.").setVisible(true);
+                } else {
+                    try {
+                        Driver newDriver = new Driver();
+                        newDriver.setFirstname(fName.getText());
+                        newDriver.setLastname(lName.getText());
+                        newDriver.setStreetAddress(address.getText());
+                        newDriver.setCity(city.getText());
+                        newDriver.setState(state.getSelectedItem().toString());
+                        newDriver.setZipCode(zipCode.getText());
+                        newDriver.setEmail(emailAddress.getText());
+                        newDriver.setPassword(password.getText());
+                        newDriver.setDriverLicense(licenseNumber.getText());
+                        DriveShare.driversList.add(newDriver);
 
-                new DriverGUI().setVisible(true);
-                this.dispose();
+                        new DriverGUI().setVisible(true);
+                        this.dispose();
+                    } catch (Exception e) {
+                        //Something unexpected went wrong
+                        new Error("Driver account creation failed.").setVisible(true);
+                    }
+                }
             } else if (isPassenger.isSelected()) {
-                Passenger newPass = new Passenger();
-                newPass.setFirstname(fName.getText());
-                newPass.setLastname(lName.getText());
-                newPass.setStreetAddress(address.getText());
-                newPass.setCity(city.getText());
-                newPass.setState(state.getSelectedItem().toString());
-                newPass.setZipCode(zipCode.getText());
-                newPass.setEmail(emailAddress.getText());
-                newPass.setPassword(password.getText());
-                DriveShare.passengersList.add(newPass);
+                try {
+                    Passenger newPass = new Passenger();
+                    newPass.setFirstname(fName.getText());
+                    newPass.setLastname(lName.getText());
+                    newPass.setStreetAddress(address.getText());
+                    newPass.setCity(city.getText());
+                    newPass.setState(state.getSelectedItem().toString());
+                    newPass.setZipCode(zipCode.getText());
+                    newPass.setEmail(emailAddress.getText());
+                    newPass.setPassword(password.getText());
+                    DriveShare.passengersList.add(newPass);
 
-                new Schedule().setVisible(true);
-                this.dispose();
+                    new Schedule().setVisible(true);
+                    this.dispose();
+                } catch (Exception e) {
+                    //Something unexpected went wrong
+                    new Error("Passenger account creation failed.").setVisible(true);
+                }
             } else {
                 new Error("Please select account type.").setVisible(true);
             }
-        } catch (Exception e) {
-            new Error("Account creation failed.").setVisible(true);
+
         }
     }//GEN-LAST:event_createAccountButtonActionPerformed
 
