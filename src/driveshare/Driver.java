@@ -58,10 +58,6 @@ public class Driver extends User implements Print {
         return driverVehicle.getVehicleType();
     }
 
-    public void setVehicleType(String vehicleType) {
-        this.driverVehicle.setVehicleType(vehicleType);
-    }
-
     //PRINT methods
     public String getFull() {
         String n = (userName.getFull() + "\n" + "\n" + this.getDriverLicense());

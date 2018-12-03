@@ -4,13 +4,30 @@ package driveshare;
  *
  * @author smit3
  */
-public class Car {
+public class Car extends Vehicle {
 
     //variables
     boolean heatedSeats;
     boolean AC;
     boolean cupholders;
     boolean aux;
+
+    //Constructors
+    public Car() {
+        super();
+        boolean heatedSeats = false;
+        boolean AC = false;
+        boolean cupholders = false;
+        boolean aux = false;
+    }
+
+    public Car(String make, String number, String color, int capacity, boolean newHeatedSeats, boolean newAC, boolean newCupholders, boolean newAux) {
+        super(make, number, color, capacity);
+        boolean heatedSeats = newHeatedSeats;
+        boolean AC = newAC;
+        boolean cupholders = newCupholders;
+        boolean aux = newAux;
+    }
 
     //getters
     public boolean getHeatedSeats() {

@@ -7,22 +7,20 @@ package driveshare;
 public class Trip {
 
     //variables
-    float miles;
-    Location pickup;
+    Origin pickup;
     Address destination;
-    String pickupTime;
-    String date;
     Passenger passenger;
     Driver driver;
     int numOfPassengers;
 
     //getters
     public float getMiles() {
-        return miles;
+        //Map should calculate this
+        return 0;
     }
 
     public Location getPickupLoc() {
-        return pickup;
+        return pickup.getLocation();
     }
 
     public Address getDestinationLoc() {
@@ -30,11 +28,11 @@ public class Trip {
     }
 
     public String getPUTime() {
-        return pickupTime;
+        return pickup.getTime();
     }
 
     public String getDate() {
-        return date;
+        return pickup.getDate();
     }
 
     public Passenger getPassenger() {
@@ -50,12 +48,8 @@ public class Trip {
     }
 
     //setters
-    public void setMiles(int n) {
-        miles = n;
-    }
-
     public void setPickup(Location n) {
-        pickup = n;
+        pickup.setLocation(n);
     }
 
     public void setDestination(Address n) {
@@ -63,11 +57,11 @@ public class Trip {
     }
 
     public void setPickupTime(String n) {
-        pickupTime = n;
+        pickup.setTime(n);
     }
 
     public void setDate(String n) {
-        date = n;
+        pickup.setDate(n);
     }
 
     public void setPassenger(Passenger n) {

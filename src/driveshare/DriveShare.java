@@ -1,4 +1,10 @@
 package driveshare;
+//Add vehicle create, confim
+//Compare passenger numbers
+//Have trip calculate miles
+//Add disability
+//Create user constructor
+//Create trip constructors
 
 import java.util.*;
 
@@ -39,7 +45,7 @@ public class DriveShare {
         new Login().setVisible(true);
     }
 
-    public static void createDemoUsers() {
+    private static void createDemoUsers() {
         //Daisy
         Passenger daisy = new Passenger();
         daisy.setFirstname("Daisy");

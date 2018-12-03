@@ -6,21 +6,12 @@ package driveshare;
  */
 public class User implements Print {
 
-    int userID;
     String password;
     Name userName = new Name();
     Address userAddress = new Address();
     Contact userContact = new Contact();
 
     //getters and setters for USER
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -112,8 +103,7 @@ public class User implements Print {
 
     //PRINT methods
     public String getFull() {
-        String n = userName.getFull();
-        return n;
+        return userName.getFull();
     }
 
     public void print() {

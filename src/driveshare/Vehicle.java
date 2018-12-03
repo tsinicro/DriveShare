@@ -6,18 +6,26 @@ package driveshare;
  */
 public class Vehicle implements Print {
 
+    //variables
     String vehicleMake;
     String vehicleNumber;
     String vehicleColor;
     int vehicleCapacity;
-    String vehicleType;
+    final String vehicleType = "";
 
+    //Constructors
     public Vehicle() {
         vehicleMake = "";
         vehicleNumber = "";
         vehicleColor = "";
         vehicleCapacity = 0;
-        vehicleType = "";
+    }
+
+    public Vehicle(String make, String number, String color, int capacity) {
+        vehicleMake = make;
+        vehicleNumber = number;
+        vehicleColor = color;
+        vehicleCapacity = capacity;
     }
 
     //Getters and setters
@@ -57,14 +65,9 @@ public class Vehicle implements Print {
         return vehicleType;
     }
 
-    public void setVehicleType(String vehicleType) {
-        this.vehicleType = vehicleType;
-    }
-
     //PRINT methods
     public String getFull() {
-        String n = this.getVehicleColor() + " " + this.getVehicleMake() + " " + this.getVehicleType();
-        return n;
+        return this.getVehicleColor() + " " + this.getVehicleMake() + " " + this.getVehicleType();
     }
 
     public void print() {

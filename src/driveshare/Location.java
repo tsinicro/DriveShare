@@ -38,9 +38,14 @@ public class Location implements Print {
         System.out.println(this.getFull());
     }
 
-    //constructor
+    //constructors
     public Location(Address pu, String des) {
         pickup = pu;
         description = des;
+    }
+    
+    public Location() {
+        pickup = new Address();
+        description = "";
     }
 }
