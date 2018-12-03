@@ -10,6 +10,8 @@ public class DriveShare {
 
     public static ArrayList<Passenger> passengersList = new ArrayList<Passenger>();
     public static ArrayList<Driver> driversList = new ArrayList<Driver>();
+    public static Passenger currentPassenger = new Passenger();
+    public static Driver currentDriver = new Driver();
 
     /**
      * @param args the command line arguments
