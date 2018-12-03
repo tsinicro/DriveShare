@@ -1,5 +1,10 @@
 package driveshare;
 
+import static driveshare.DriveShare.driversList;
+import static driveshare.DriveShare.passengersList;
+import static driveshare.DriveShare.currentDriver;
+import static driveshare.DriveShare.currentPassenger;
+
 /**
  *
  * @author tsini
@@ -26,7 +31,7 @@ public class Login extends javax.swing.JFrame {
         accountTypeSelector = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        usernameText = new javax.swing.JTextField();
+        emailText = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         passwordText = new javax.swing.JTextField();
         forgotPasswordBtn = new javax.swing.JButton();
@@ -44,7 +49,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("Log In");
 
-        jLabel3.setText("Username");
+        jLabel3.setText("Email");
 
         jLabel4.setText("Password");
 
@@ -88,11 +93,11 @@ public class Login extends javax.swing.JFrame {
                             .addGap(10, 10, 10)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(createBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                                    .addComponent(createBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(forgotPasswordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(passwordText, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(usernameText, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(emailText, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(loginBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGap(61, 61, 61))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -113,7 +118,7 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(emailText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -149,11 +154,38 @@ public class Login extends javax.swing.JFrame {
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         try {
             if (isDriver.isSelected()) {
-                //Begin driver GUI
-                new DriverGUI().setVisible(true);
+                boolean found = false;
+                for (int i = 0; i < driversList.size() && found == false; i++) {
+                    //Check for matching credentials
+                    if (driversList.get(i).getEmail().equalsIgnoreCase(emailText.getText()) && driversList.get(i).getPassword().equalsIgnoreCase(passwordText.getText())) {
+                        //Assign global driver
+                        currentDriver = driversList.get(i);
+                        found = true;
+                    }
+                }
+                if (found == true) {
+                    //Begin driver GUI
+                    new DriverGUI().setVisible(true);
+                } else {
+                    new Error("Account not found.").setVisible(true);
+                }
             } else if (isPassenger.isSelected()) {
-                //Begin passenger GUI
-                new Schedule().setVisible(true);
+
+                boolean found = false;
+                for (int i = 0; i < passengersList.size() && found == false; i++) {
+                    //Check for matching credentials
+                    if (passengersList.get(i).getEmail().equalsIgnoreCase(emailText.getText()) && passengersList.get(i).getPassword().equalsIgnoreCase(passwordText.getText())) {
+                        //Assign global passenger
+                        currentPassenger = passengersList.get(i);
+                        found = true;
+                    }
+                }
+                if (found == true) {
+                    //Begin passenger GUI
+                    new Schedule().setVisible(true);
+                } else {
+                    new Error("Account not found.").setVisible(true);
+                }
             } else {
                 //If account type isn't specified
                 new Error("Please select account type.").setVisible(true);
@@ -202,6 +234,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup accountTypeSelector;
     private javax.swing.JButton createBtn;
+    private javax.swing.JTextField emailText;
     private javax.swing.JButton forgotPasswordBtn;
     private javax.swing.JRadioButton isDriver;
     private javax.swing.JRadioButton isPassenger;
@@ -211,6 +244,5 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JButton loginBtn;
     private javax.swing.JTextField passwordText;
-    private javax.swing.JTextField usernameText;
     // End of variables declaration//GEN-END:variables
 }

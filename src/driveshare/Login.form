@@ -47,12 +47,12 @@
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="createBtn" pref="126" max="32767" attributes="0"/>
+                                  <Component id="createBtn" pref="128" max="32767" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="forgotPasswordBtn" min="-2" pref="135" max="-2" attributes="0"/>
                               </Group>
                               <Component id="passwordText" alignment="0" max="32767" attributes="0"/>
-                              <Component id="usernameText" alignment="0" max="32767" attributes="0"/>
+                              <Component id="emailText" alignment="0" max="32767" attributes="0"/>
                               <Component id="loginBtn" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
@@ -81,7 +81,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="usernameText" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="emailText" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -119,10 +119,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Username"/>
+        <Property name="text" type="java.lang.String" value="Email"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="usernameText">
+    <Component class="javax.swing.JTextField" name="emailText">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
