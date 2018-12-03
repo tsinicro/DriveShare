@@ -143,21 +143,21 @@ public class Login extends javax.swing.JFrame {
 
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
             new CreateAccount().setVisible(true);
-            this.setVisible(false);
+            this.dispose();
     }//GEN-LAST:event_createBtnActionPerformed
 
     private void forgotPasswordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPasswordBtnActionPerformed
             new PasswordForgot().setVisible(true);
-            this.setVisible(false);
+            this.dispose();
     }//GEN-LAST:event_forgotPasswordBtnActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
         try {
         if (isDriver.isSelected()) {
-            
+            new DriverGUI().setVisible(true);
         } else if (isPassenger.isSelected()) {
-            
+            new Schedule().setVisible(true);
         } else {
             new Error("Please select account type.").setVisible(true);
         }
