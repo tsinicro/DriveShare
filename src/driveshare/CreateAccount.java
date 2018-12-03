@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package driveshare;
 
 /**
@@ -12,7 +7,7 @@ package driveshare;
 public class CreateAccount extends javax.swing.JFrame {
 
     /**
-     * Creates new form Create
+     * Creates new form CreateAccount
      */
     public CreateAccount() {
         initComponents();
@@ -229,7 +224,6 @@ public class CreateAccount extends javax.swing.JFrame {
     }//GEN-LAST:event_clearFormButtonActionPerformed
 
     private void createAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountButtonActionPerformed
-        // TODO add your handling code here:
         try {
             if (isDriver.isSelected()) {
                 Driver newDriver = new Driver();
@@ -245,7 +239,7 @@ public class CreateAccount extends javax.swing.JFrame {
                 DriveShare.driversList.add(newDriver);
 
                 new DriverGUI().setVisible(true);
-                this.setVisible(false);
+                this.dispose();
             } else if (isPassenger.isSelected()) {
                 Passenger newPass = new Passenger();
                 newPass.setFirstname(fName.getText());
@@ -259,7 +253,7 @@ public class CreateAccount extends javax.swing.JFrame {
                 DriveShare.passengersList.add(newPass);
 
                 new Schedule().setVisible(true);
-                this.setVisible(false);
+                this.dispose();
             } else {
                 new Error("Please select account type.").setVisible(true);
             }

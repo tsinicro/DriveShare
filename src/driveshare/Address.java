@@ -1,34 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package driveshare;
 
 /**
  *
  * @author tsini
  */
-public class Address implements Print{
+public class Address implements Print {
+
     String streetAddress;
     String city;
     String state;
-    String country; 
+    String country;
     String zipCode;
-     
+
     public Address() {
-        streetAddress="";
-        city="";
-        state="";
-        country=""; 
-        zipCode = "";               
-    }
-    
-    public Address(String s1){
-        streetAddress=s1;
+        streetAddress = "";
+        city = "";
+        state = "";
+        country = "";
+        zipCode = "";
     }
 
-    
+    public Address(String s1) {
+        streetAddress = s1;
+    }
+
     //getters and setters
     public String getStreetAddress() {
         return streetAddress;
@@ -69,14 +64,14 @@ public class Address implements Print{
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
-    
+
     //PRINT methods
-    public String getFull(){
+    public String getFull() {
         String n = (streetAddress + "\n" + city + ", " + state + " " + zipCode);
         return n;
     }
-    
-    public void print(){
+
+    public void print() {
         System.out.println(this.getFull());
     }
 

@@ -1,21 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package driveshare;
 
 /**
  *
  * @author tsini
  */
-public class Contact implements Print{
-        String phoneNumber;
-        String email;
-     
+public class Contact implements Print {
+
+    String phoneNumber;
+    String email;
+
     public Contact() {
         phoneNumber = "";
-        email = "";           
+        email = "";
     }
 
     public Contact(String phoneNumber, String email) {
@@ -38,16 +34,15 @@ public class Contact implements Print{
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
     //PRINT methods
-    public String getFull(){
+    public String getFull() {
         String n = (phoneNumber + " " + email);
         return n;
     }
-    
-    public void print(){
+
+    public void print() {
         System.out.println(this.getFull());
     }
-    
-}
 
+}
