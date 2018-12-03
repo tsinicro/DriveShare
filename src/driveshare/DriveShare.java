@@ -17,7 +17,7 @@ public class DriveShare {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        new Login().setVisible(true);
         // TODO code application logic here
     }
     

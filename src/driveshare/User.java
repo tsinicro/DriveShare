@@ -12,9 +12,9 @@ package driveshare;
 public class User implements Print{
     int userID;
     String password;
-    Name userName;
-    Address userAddress;
-    Contact userContact;
+    Name userName = new Name();
+    Address userAddress = new Address();
+    Contact userContact = new Contact();
 
 
 

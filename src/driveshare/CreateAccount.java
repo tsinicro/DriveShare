@@ -242,6 +242,8 @@ public class CreateAccount extends javax.swing.JFrame {
             newDriver.setPassword(password.getText());
             newDriver.setDriverLicense(licenseNumber.getText());
             DriveShare.driversList.add(newDriver);
+            
+            new DriverGUI().setVisible(true);
         } else if (isPassenger.isSelected()) {
             Passenger newPass = new Passenger();
             newPass.setFirstname(fName.getText());
@@ -253,6 +255,8 @@ public class CreateAccount extends javax.swing.JFrame {
             newPass.setEmail(emailAddress.getText());
             newPass.setPassword(password.getText());
             DriveShare.passengersList.add(newPass);
+            
+            new Schedule().setVisible(true);
         }
     }//GEN-LAST:event_createAccountButtonActionPerformed
 
