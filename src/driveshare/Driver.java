@@ -1,19 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package driveshare;
 
 /**
  *
  * @author tsini
  */
-public class Driver extends User implements Print{
+public class Driver extends User implements Print {
+
     String driverLicense;
     Vehicle driverVehicle;
 
-    public Driver(){
+    public Driver() {
         driverLicense = "";
     }
 
@@ -66,17 +62,14 @@ public class Driver extends User implements Print{
         this.driverVehicle.setVehicleType(vehicleType);
     }
 
-    
     //PRINT methods
-    public String getFull(){
-        String n = (userName.getFull() + "\n" +  "\n" + this.getDriverLicense());
+    public String getFull() {
+        String n = (userName.getFull() + "\n" + "\n" + this.getDriverLicense());
         return n;
     }
-    
-    public void print(){
+
+    public void print() {
         System.out.println(this.getFull());
     }
-
-
 
 }

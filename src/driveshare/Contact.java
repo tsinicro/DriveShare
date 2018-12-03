@@ -19,6 +19,7 @@ public class Contact implements Print {
         this.email = email;
     }
 
+//Getters and setters
     public String getPhoneNumber() {
         return phoneNumber;
     }
