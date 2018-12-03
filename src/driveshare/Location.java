@@ -10,40 +10,41 @@ package driveshare;
  * @author smit3
  */
 public class Location implements Print {
+
     //variables
     Address pickup;
     String description;
-    
+
     //getters
-    public Address getPickup(){
+    public Address getPickup() {
         return pickup;
     }
-    
-    public String getDescription(){
+
+    public String getDescription() {
         return description;
     }
-    
+
     //setters
-    public void setPickup(Address n){
+    public void setPickup(Address n) {
         pickup = n;
     }
-    
-    public void setDescription(String n){
+
+    public void setDescription(String n) {
         description = n;
     }
-    
+
     //PRINT methods
-    public String getFull(){
+    public String getFull() {
         String n = (pickup.getFull() + "\n" + description);
         return n;
     }
-    
-    public void print(){
+
+    public void print() {
         System.out.println(this.getFull());
     }
-    
+
     //constructor
-    public Location(Address pu, String des){
+    public Location(Address pu, String des) {
         pickup = pu;
         description = des;
     }
