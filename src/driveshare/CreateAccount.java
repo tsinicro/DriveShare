@@ -253,6 +253,8 @@ public class CreateAccount extends javax.swing.JFrame {
             //Check for invalid email
         } else if (emailAddress.getText().indexOf('@') == -1 || emailAddress.getText().indexOf('.') == -1) {
             new Error("Email is invalid.").setVisible(true);
+        } else if (password.getText().length() >= 8 ) {
+            new Error("Password length must be at least eight. ").setVisible(true);
         } else {
             if (isDriver.isSelected()) {
                 //Check for invalid .license number
