@@ -137,19 +137,13 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CreateAccount().setVisible(true);
-            }
-        });
+            new CreateAccount().setVisible(true);
+            this.setVisible(false);
     }//GEN-LAST:event_createBtnActionPerformed
 
     private void forgotPasswordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPasswordBtnActionPerformed
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PasswordForgot().setVisible(true);
-            }
-        });
+            new PasswordForgot().setVisible(true);
+            this.setVisible(false);
     }//GEN-LAST:event_forgotPasswordBtnActionPerformed
 
     /**

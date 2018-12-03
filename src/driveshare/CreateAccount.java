@@ -244,6 +244,7 @@ public class CreateAccount extends javax.swing.JFrame {
             DriveShare.driversList.add(newDriver);
             
             new DriverGUI().setVisible(true);
+            this.setVisible(false);
         } else if (isPassenger.isSelected()) {
             Passenger newPass = new Passenger();
             newPass.setFirstname(fName.getText());
@@ -257,6 +258,7 @@ public class CreateAccount extends javax.swing.JFrame {
             DriveShare.passengersList.add(newPass);
             
             new Schedule().setVisible(true);
+            this.setVisible(false);
         }
     }//GEN-LAST:event_createAccountButtonActionPerformed
 

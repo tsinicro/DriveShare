@@ -59,6 +59,11 @@ public class DriverAvaliability extends javax.swing.JFrame {
         MenuBtn.setText("Menu");
 
         submitBtn.setText("Submit");
+        submitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,6 +116,12 @@ public class DriverAvaliability extends javax.swing.JFrame {
     private void avaliableDriversComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avaliableDriversComboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_avaliableDriversComboActionPerformed
+
+    private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
+        // TODO add your handling code here:
+        new PassengerConfirmation().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_submitBtnActionPerformed
 
     /**
      * @param args the command line arguments
