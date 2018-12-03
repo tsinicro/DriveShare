@@ -230,6 +230,7 @@ public class CreateAccount extends javax.swing.JFrame {
 
     private void createAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountButtonActionPerformed
         // TODO add your handling code here:
+        try {
         if (isDriver.isSelected()) {
             Driver newDriver = new Driver();
             newDriver.setFirstname(fName.getText());
@@ -259,6 +260,11 @@ public class CreateAccount extends javax.swing.JFrame {
             
             new Schedule().setVisible(true);
             this.setVisible(false);
+        } else {
+            new Error("Please select account type.").setVisible(true);
+        }
+        } catch (Exception e) {
+            new Error("Account creation failed.").setVisible(true);
         }
     }//GEN-LAST:event_createAccountButtonActionPerformed
 
