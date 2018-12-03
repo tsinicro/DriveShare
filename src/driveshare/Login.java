@@ -68,6 +68,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         loginBtn.setText("Login");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBtnActionPerformed(evt);
+            }
+        });
 
         isDriver.setText("Driver");
 
@@ -145,6 +150,21 @@ public class Login extends javax.swing.JFrame {
             new PasswordForgot().setVisible(true);
             this.setVisible(false);
     }//GEN-LAST:event_forgotPasswordBtnActionPerformed
+
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        // TODO add your handling code here:
+        try {
+        if (isDriver.isSelected()) {
+            
+        } else if (isPassenger.isSelected()) {
+            
+        } else {
+            new Error("Please select account type.").setVisible(true);
+        }
+        } catch (Exception e) {
+            new Error("Login failed.").setVisible(true);
+        }
+    }//GEN-LAST:event_loginBtnActionPerformed
 
     /**
      * @param args the command line arguments
