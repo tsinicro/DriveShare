@@ -1,43 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package driveshare;
 
 /**
  *
  * @author tsini
  */
-public class Passenger extends User implements Print{
-    boolean passDisability; 
-    
-    public Passenger(){
+public class Passenger extends User implements Print {
+
+    boolean passDisability;
+
+    public Passenger() {
         passDisability = false;
     }
 
     //getters and setters
-    public boolean getDis(){
+    public boolean getDis() {
         return passDisability;
     }
-    
-    public void setPassengerDisability(boolean n){
+
+    public void setPassengerDisability(boolean n) {
         passDisability = n;
     }
-    
+
     //method to get passenger full name
-    public String getName(){
+    public String getName() {
         String n = this.getFirstname() + " " + this.getLastname();
         return n;
     }
-    
+
     //PRINT method 
-    public String getFull(){
+    public String getFull() {
         String n = (userName.getFull() + " " + userContact.getFull());
         return n;
     }
-    
-    public void print(){
+
+    public void print() {
         System.out.println(this.getFull());
     }
 }

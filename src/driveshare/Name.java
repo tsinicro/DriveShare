@@ -1,35 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package driveshare;
 
 /**
  *
  * @author tsini
  */
-public class Name implements Print{
+public class Name implements Print {
+
     //variables
     String firstName;
     String middleName;
     String lastName;
-     
+
     //constructor
     public Name() {
         firstName = "";
         middleName = "";
-        lastName = "";       
+        lastName = "";
     }
-    
+
     //Construtor
-    public Name(String fn, String ln){
-        firstName= fn;
+    public Name(String fn, String ln) {
+        firstName = fn;
         lastName = ln;
     }
-    
-    //getters and setters
 
+    //getters and setters
     public String getFirstName() {
         return firstName;
     }
@@ -53,16 +48,15 @@ public class Name implements Print{
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    
+
     //PRINT methods
-    public String getFull(){
+    public String getFull() {
         String n = (this.getFirstName() + " " + this.getLastName());
         return n;
     }
-    
-    public void print(){
+
+    public void print() {
         System.out.println(this.getFull());
     }
-    
-    
+
 }
