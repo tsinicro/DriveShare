@@ -1,16 +1,13 @@
 package driveshare;
 
-/**
- *
- * @author tsini
- */
 public class DriverAvailability extends javax.swing.JFrame {
 
     /**
      * Creates new form DriverAvaliability
      */
-    public DriverAvailability() {
+    public DriverAvailability(Passenger passenger) {
         initComponents();
+        this.passenger = passenger;
     }
 
     /**
@@ -24,27 +21,27 @@ public class DriverAvailability extends javax.swing.JFrame {
 
         avaliableDriversCombo = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        MenuBtn = new javax.swing.JButton();
-        selectBtn = new javax.swing.JButton();
+        back = new javax.swing.JButton();
+        select = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        avaliableDriversCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jay - 123-456-7890" }));
+        avaliableDriversCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Jay - 1234567890" }));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("Driver Availability");
 
-        MenuBtn.setText("Menu");
-        MenuBtn.addActionListener(new java.awt.event.ActionListener() {
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuBtnActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
 
-        selectBtn.setText("Select");
-        selectBtn.addActionListener(new java.awt.event.ActionListener() {
+        select.setText("Select");
+        select.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selectBtnActionPerformed(evt);
+                selectActionPerformed(evt);
             }
         });
 
@@ -53,40 +50,42 @@ public class DriverAvailability extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(avaliableDriversCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(selectBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(MenuBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(select, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(avaliableDriversCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(selectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MenuBtn)
-                .addGap(12, 12, 12))
+                .addComponent(avaliableDriversCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(select, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(back)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void selectBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectBtnActionPerformed
-        new PassengerConfirmation().setVisible(true);
+    private void selectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectActionPerformed
+        //Placeholder line to enable navigation
+        new PassengerConfirmation(passenger).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_selectBtnActionPerformed
+    }//GEN-LAST:event_selectActionPerformed
 
-    private void MenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBtnActionPerformed
-        new Schedule().setVisible(true);
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        //Placeholder line to enable navigation
+        new PassengerGUI(passenger).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_MenuBtnActionPerformed
+    }//GEN-LAST:event_backActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -116,15 +115,16 @@ public class DriverAvailability extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DriverAvailability().setVisible(true);
+                new DriverAvailability(new Passenger()).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton MenuBtn;
     private javax.swing.JComboBox<String> avaliableDriversCombo;
+    private javax.swing.JButton back;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton selectBtn;
+    private javax.swing.JButton select;
     // End of variables declaration//GEN-END:variables
+    Passenger passenger;
 }

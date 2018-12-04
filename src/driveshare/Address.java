@@ -1,17 +1,15 @@
 package driveshare;
 
-/**
- *
- * @author tsini
- */
 public class Address implements Print {
 
+    //Variables
     String streetAddress;
     String city;
     String state;
     String country;
     String zipCode;
 
+    //Constructors
     public Address() {
         streetAddress = "";
         city = "";
@@ -20,37 +18,50 @@ public class Address implements Print {
         zipCode = "";
     }
 
-    public Address(String s1) {
-        streetAddress = s1;
+    public Address(String streetAddress) {
+        this.streetAddress = streetAddress;
+        city = "";
+        state = "";
+        country = "";
+        zipCode = "";
     }
 
-    //getters and setters
+    public Address(String streetAddress, String city, String state, String country, String zipCode) {
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.zipCode = zipCode;
+    }
+
+    //Getters
     public String getStreetAddress() {
         return streetAddress;
-    }
-
-    public void setStreetAddress(String streetAddress1) {
-        this.streetAddress = streetAddress1;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public String getState() {
         return state;
     }
 
-    public void setState(String state) {
-        this.state = state;
-    }
-
     public String getCountry() {
         return country;
+    }
+
+    //Setters
+    public void setStreetAddress(String streetAddress1) {
+        this.streetAddress = streetAddress1;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public void setCountry(String country) {
@@ -65,10 +76,9 @@ public class Address implements Print {
         this.zipCode = zipCode;
     }
 
-    //PRINT methods
+    //Print methods
     public String getFull() {
-        String n = (streetAddress + "\n" + city + ", " + state + " " + zipCode);
-        return n;
+        return streetAddress + "\n" + city + ", " + state + " " + zipCode;
     }
 
     public void print() {

@@ -1,71 +1,55 @@
 package driveshare;
 
-/**
- *
- * @author tsini
- */
 public class Driver extends User implements Print {
 
-    String driverLicense;
-    Vehicle driverVehicle;
+    //Variables
+    String license;
+    Vehicle vehicle;
 
+    //Constructors
     public Driver() {
-        driverLicense = "";
+        super();
+        license = "";
+        vehicle = new Vehicle();
     }
 
-    //getters and setters
-    public String getDriverLicense() {
-        return driverLicense;
+    public Driver(Name name, String password, Address address, Contact contact, String license, Vehicle vehicle) {
+        super(name, password, address, contact);
+        this.license = license;
+        this.vehicle = vehicle;
+    }
+    
+    public Driver(User user, String license, Vehicle vehicle) {
+        super(user);
+        this.license = license;
+        this.vehicle = vehicle;
     }
 
-    public void setDriverLicense(String driverLicense) {
-        this.driverLicense = driverLicense;
+    //Getters
+    public String getLicense() {
+        return license;
     }
 
-    public String getVehicleMake() {
-        return driverVehicle.getVehicleMake();
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
-    public void setVehicleMake(String vehicleMake) {
-        this.driverVehicle.setVehicleMake(vehicleMake);
+    //Setters
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
-    public String getVehicleNumber() {
-        return driverVehicle.getVehicleNumber();
+    public void setLicense(String license) {
+        this.license = license;
     }
 
-    public void setVehicleNumber(String vehicleNumber) {
-        this.driverVehicle.setVehicleNumber(vehicleNumber);
-    }
-
-    public String getVehicleColor() {
-        return driverVehicle.getVehicleColor();
-    }
-
-    public void setVehicleColor(String vehicleColor) {
-        this.driverVehicle.setVehicleColor(vehicleColor);
-    }
-
-    public int getVehicleCapacity() {
-        return driverVehicle.getVehicleCapacity();
-    }
-
-    public void setVehicleCapacity(int vehicleCapacity) {
-        this.driverVehicle.setVehicleCapacity(vehicleCapacity);
-    }
-
-    public String getVehicleType() {
-        return driverVehicle.getVehicleType();
-    }
-
-    //PRINT methods
+    //Print methods
     public String getFull() {
-        String n = (userName.getFull() + "\n" + "\n" + this.getDriverLicense());
-        return n;
+        return name.getFull() + "\n" + license;
     }
 
     public void print() {
-        System.out.println(this.getFull());
+        System.out.println(getFull());
     }
 
 }

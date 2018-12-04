@@ -1,49 +1,47 @@
 package driveshare;
 
-/**
- *
- * @author tsini
- */
 public class Contact implements Print {
 
-    String phoneNumber;
+    //Variables
+    String phone;
     String email;
 
+    //Constructors
     public Contact() {
-        phoneNumber = "";
+        phone = "";
         email = "";
     }
 
-    public Contact(String phoneNumber, String email) {
-        this.phoneNumber = phoneNumber;
+    public Contact(String phone, String email) {
+        this.phone = phone;
         this.email = email;
     }
 
-//Getters and setters
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    //Getters
+    public String getPhone() {
+        return phone;
     }
 
     public String getEmail() {
         return email;
     }
 
+    //Setters
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
-    //PRINT methods
+    //Print methods
     public String getFull() {
-        String n = (phoneNumber + " " + email);
-        return n;
+        return phone + " " + email;
     }
 
     public void print() {
-        System.out.println(this.getFull());
+        System.out.println(getFull());
     }
 
 }

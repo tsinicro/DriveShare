@@ -1,20 +1,14 @@
 package driveshare;
 
-/**
- *
- * @author tsini
- */
 public class Name implements Print {
 
     //variables
     String firstName;
-    String middleName;
     String lastName;
 
     //constructor
     public Name() {
         firstName = "";
-        middleName = "";
         lastName = "";
     }
 
@@ -31,14 +25,6 @@ public class Name implements Print {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
     }
 
     public String getLastName() {

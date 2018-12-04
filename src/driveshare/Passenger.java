@@ -1,39 +1,42 @@
 package driveshare;
 
-/**
- *
- * @author tsini
- */
 public class Passenger extends User implements Print {
 
-    boolean passDisability;
+    //Variables
+    boolean disability;
 
+    //Constructors
     public Passenger() {
-        passDisability = false;
+        super();
+        disability = false;
     }
 
-    //getters and setters
-    public boolean getDis() {
-        return passDisability;
+    public Passenger(Name name, String password, Address address, Contact contact, boolean disability) {
+        super(name, password, address, contact);
+        this.disability = disability;
     }
 
-    public void setPassengerDisability(boolean n) {
-        passDisability = n;
+    public Passenger(User user, boolean disability) {
+        super(user);
+        this.disability = disability;
     }
 
-    //method to get passenger full name
-    public String getName() {
-        String n = this.getFirstname() + " " + this.getLastname();
-        return n;
+    //Getters
+    public boolean getDisability() {
+        return disability;
     }
 
-    //PRINT method 
+    //Setters
+    public void setDisability(boolean disability) {
+        disability = disability;
+    }
+
+    //Print methods
     public String getFull() {
-        String n = (userName.getFull() + " " + userContact.getFull());
-        return n;
+        return name.getFull() + " " + contact.getFull();
     }
 
     public void print() {
-        System.out.println(this.getFull());
+        System.out.println(getFull());
     }
 }

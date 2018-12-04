@@ -1,12 +1,8 @@
 package driveshare;
 
-/**
- *
- * @author smit3
- */
 public class Car extends Vehicle {
 
-    //variables
+    //Variables
     boolean heatedSeats;
     boolean AC;
     boolean cupholders;
@@ -15,21 +11,21 @@ public class Car extends Vehicle {
     //Constructors
     public Car() {
         super();
-        boolean heatedSeats = false;
-        boolean AC = false;
-        boolean cupholders = false;
-        boolean aux = false;
+        heatedSeats = false;
+        AC = false;
+        cupholders = false;
+        aux = false;
     }
 
-    public Car(String make, String number, String color, int capacity, boolean newHeatedSeats, boolean newAC, boolean newCupholders, boolean newAux) {
+    public Car(String make, String number, String color, int capacity, boolean heatedSeats, boolean AC, boolean cupholders, boolean aux) {
         super(make, number, color, capacity);
-        boolean heatedSeats = newHeatedSeats;
-        boolean AC = newAC;
-        boolean cupholders = newCupholders;
-        boolean aux = newAux;
+        this.heatedSeats = heatedSeats;
+        this.AC = AC;
+        this.cupholders = cupholders;
+        this.aux = aux;
     }
 
-    //getters
+    //Getters
     public boolean getHeatedSeats() {
         return heatedSeats;
     }
@@ -42,25 +38,25 @@ public class Car extends Vehicle {
         return cupholders;
     }
 
-    public boolean getAUX() {
+    public boolean getAux() {
         return aux;
     }
 
-    //setters
-    public void setHeatedSeats(boolean n) {
-        heatedSeats = n;
+    //Setters
+    public void setHeatedSeats(boolean heatedSeats) {
+        this.heatedSeats = heatedSeats;
     }
 
-    public void setAC(boolean n) {
-        AC = n;
+    public void setAC(boolean AC) {
+        this.AC = AC;
     }
 
-    public void setCupholders(boolean n) {
-        cupholders = n;
+    public void setCupholders(boolean cupholders) {
+        this.cupholders = cupholders;
     }
 
-    public void setAUX(boolean n) {
-        aux = n;
+    public void setAux(boolean aux) {
+        this.aux = aux;
     }
 
 }

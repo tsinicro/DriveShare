@@ -1,12 +1,8 @@
 package driveshare;
 
-/**
- *
- * @author smit3
- */
 public class Van extends Vehicle {
 
-    //variables 
+    //Variables 
     int height;
     int weight;
     String doorType;
@@ -14,14 +10,6 @@ public class Van extends Vehicle {
     final String vehicleType = "van";
 
     //Constructors
-    public Van(String make, String number, String color, int capacity, int newHeight, int newWeight, String newDoorType, boolean newDisabilityAccessible) {
-        super(make, number, color, capacity);
-        height = newHeight;
-        weight = newWeight;
-        doorType = newDoorType;
-        disabilityAccessible = newDisabilityAccessible;
-    }
-
     public Van() {
         super();
         height = 0;
@@ -30,7 +18,15 @@ public class Van extends Vehicle {
         disabilityAccessible = false;
     }
 
-    //getter
+    public Van(String make, String number, String color, int capacity, int height, int weight, String doorType, boolean disabilityAccessible) {
+        super(make, number, color, capacity);
+        this.height = height;
+        this.weight = weight;
+        this.doorType = doorType;
+        this.disabilityAccessible = disabilityAccessible;
+    }
+
+    //Getters
     public int getHeight() {
         return height;
     }
@@ -47,20 +43,20 @@ public class Van extends Vehicle {
         return disabilityAccessible;
     }
 
-    //setters
-    public void setHeight(int h) {
-        height = h;
+    //Setters
+    public void setHeight(int height) {
+        this.height = height;
     }
 
-    public void setWeight(int w) {
-        weight = w;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
-    public void setDoorType(String d) {
-        doorType = d;
+    public void setDoorType(String doorType) {
+        this.doorType = doorType;
     }
 
-    public void setDisabilityAccessible(boolean d) {
-        disabilityAccessible = d;
+    public void setDisabilityAccessible(boolean disabilityAccessible) {
+        this.disabilityAccessible = disabilityAccessible;
     }
 }

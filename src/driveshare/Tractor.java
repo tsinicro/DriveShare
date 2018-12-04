@@ -1,55 +1,51 @@
 package driveshare;
 
-/**
- *
- * @author smit3
- */
 public class Tractor extends Vehicle {
 
-    //variables
+    //Variables
     int maxSpeed;
-    String type;
+    String useType;
     String turnType;
 
     //Constructors
     public Tractor() {
         super();
         maxSpeed = 0;
-        type = "";
+        useType = "";
         turnType = "";
     }
 
-    public Tractor(String make, String number, String color, int capacity, int newMaxSpeed, String newType, String newTurnType) {
+    public Tractor(String make, String number, String color, int capacity, int maxSpeed, String useType, String turnType) {
         super(make, number, color, capacity);
-        maxSpeed = newMaxSpeed;
-        type = newType;
-        turnType = newTurnType;
+        this.maxSpeed = maxSpeed;
+        this.useType = useType;
+        this.turnType = turnType;
     }
 
-    //getter 
+    //Getter 
     public int getMaxSpeed() {
         return maxSpeed;
     }
 
-    public String getType() {
-        return type;
+    public String getUseType() {
+        return useType;
     }
 
     public String getTurnType() {
         return turnType;
     }
 
-    //setters
-    public void setMaxSpeed(int m) {
-        maxSpeed = m;
+    //Setters
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
     }
 
-    public void setType(String t) {
-        type = t;
+    public void setType(String useType) {
+        this.useType = useType;
     }
 
-    public void setTurnType(String t) {
-        turnType = t;
+    public void setTurnType(String turnType) {
+        this.turnType = turnType;
     }
 
 }

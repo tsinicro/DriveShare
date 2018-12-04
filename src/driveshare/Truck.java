@@ -1,12 +1,8 @@
 package driveshare;
 
-/**
- *
- * @author smit3
- */
 public class Truck extends Vehicle {
 
-    //variables
+    //Variables
     String bedType;
     String stepHeight;
     boolean heatedSeats;
@@ -20,14 +16,14 @@ public class Truck extends Vehicle {
         heatedSeats = false;
     }
 
-    public Truck(String make, String number, String color, int capacity, String newBedType, String newStepHeight, boolean newHeatedSeats) {
+    public Truck(String make, String number, String color, int capacity, String bedType, String stepHeight, boolean heatedSeats) {
         super(make, number, color, capacity);
-        bedType = newBedType;
-        stepHeight = newStepHeight;
-        heatedSeats = newHeatedSeats;
+        this.bedType = bedType;
+        this.stepHeight = stepHeight;
+        this.heatedSeats = heatedSeats;
     }
 
-    //getters
+    //Getters
     public String getBedType() {
         return bedType;
     }
@@ -40,16 +36,16 @@ public class Truck extends Vehicle {
         return heatedSeats;
     }
 
-    //setters
-    public void setBedType(String b) {
-        bedType = b;
+    //Setters
+    public void setBedType(String bedtype) {
+        this.bedType = bedType;
     }
 
-    public void setStepHeight(String h) {
-        stepHeight = h;
+    public void setStepHeight(String stepHeight) {
+        this.stepHeight = stepHeight;
     }
 
-    public void setHeatedSeats(boolean n) {
-        heatedSeats = n;
+    public void setHeatedSeats(boolean heatedSeats) {
+        this.heatedSeats = heatedSeats;
     }
 }

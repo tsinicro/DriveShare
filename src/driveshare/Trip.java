@@ -1,38 +1,26 @@
 package driveshare;
 
-/**
- *
- * @author smit3
- */
-public class Trip {
+public class Trip implements Print {
 
-    //variables
-    Origin pickup;
+    //Variables
+    Origin origin;
     Address destination;
     Passenger passenger;
     Driver driver;
-    int numOfPassengers;
+    int numberPassengers;
 
-    //getters
+    //Getters
     public float getMiles() {
         //Map should calculate this
         return 0;
     }
 
-    public Location getPickupLoc() {
-        return pickup.getLocation();
+    public Origin getOrigin() {
+        return origin;
     }
 
-    public Address getDestinationLoc() {
+    public Address getDestination() {
         return destination;
-    }
-
-    public String getPUTime() {
-        return pickup.getTime();
-    }
-
-    public String getDate() {
-        return pickup.getDate();
     }
 
     public Passenger getPassenger() {
@@ -43,45 +31,40 @@ public class Trip {
         return driver;
     }
 
-    public int getNumPass() {
-        return numOfPassengers;
+    public int getNumberPassengers() {
+        return numberPassengers;
     }
 
-    //setters
-    public void setPickup(Location n) {
-        pickup.setLocation(n);
+    //Setters
+    public void setOrigin(Origin origin) {
+        this.origin = origin;
     }
 
-    public void setDestination(Address n) {
-        destination = n;
+    public void setDestination(Address destination) {
+        this.destination = destination;
     }
 
-    public void setPickupTime(String n) {
-        pickup.setTime(n);
+    public void setPassenger(Passenger passenger) {
+        this.passenger = passenger;
     }
 
-    public void setDate(String n) {
-        pickup.setDate(n);
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 
-    public void setPassenger(Passenger n) {
-        passenger = n;
+    public void setNumberPassengers(int numberPassengers) {
+        this.numberPassengers = numberPassengers;
     }
 
-    public void setDriver(Driver n) {
-        driver = n;
+    //Print methods
+    public String getFull() {
+        return driver.getFull() + " picking up " + passenger.getFull() + "/n" +
+       "Pickup Time: " + origin.getDate() + " " + origin.getTime() + "/n" +
+       "Number of Passengers: " + numberPassengers;
     }
-
-    public void setNumPass(int n) {
-        numOfPassengers = n;
-    }
-
-    //method to print out a trip
-    public void printTrip(Trip a) {
-        a.driver.print();
-        a.passenger.print();
-        System.out.println("Pickup Time: " + a.getDate() + " " + a.getPUTime());
-        System.out.println("Number of Passengers: " + a.getNumPass());
+    
+    public void print() {
+        System.out.println(getFull());
     }
 
 }

@@ -1,16 +1,13 @@
 package driveshare;
 
-/**
- *
- * @author Jacob
- */
 public class DriverConfirmation extends javax.swing.JFrame {
 
     /**
      * Creates new form DriverConfirmation
      */
-    public DriverConfirmation() {
+    public DriverConfirmation(Driver driver) {
         initComponents();
+        this.driver = driver;
     }
 
     /**
@@ -154,12 +151,13 @@ public class DriverConfirmation extends javax.swing.JFrame {
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
 //        test mapPass = new test("1301 third street","614 east sigler street");
 //        mapPass.show();
-        new DriverGUI().setVisible(true);
+        new DriverGUI(driver).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_confirmButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        new PassengerAvaliability().setVisible(true);
+        //Placeholder line to enable navigation
+        new PassengerAvaliability(driver, new Origin()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
@@ -190,7 +188,7 @@ public class DriverConfirmation extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DriverConfirmation().setVisible(true);
+                new DriverConfirmation(new Driver()).setVisible(true);
             }
         });
     }
@@ -214,4 +212,5 @@ public class DriverConfirmation extends javax.swing.JFrame {
     private javax.swing.JTextField pickupLocationText;
     private javax.swing.JTextField timeText;
     // End of variables declaration//GEN-END:variables
+    Driver driver;
 }

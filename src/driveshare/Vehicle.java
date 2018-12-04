@@ -1,77 +1,73 @@
 package driveshare;
 
-/**
- *
- * @author tsini
- */
 public class Vehicle implements Print {
 
-    //variables
-    String vehicleMake;
-    String vehicleNumber;
-    String vehicleColor;
-    int vehicleCapacity;
-    final String vehicleType = "";
+    //Variables
+    String make;
+    String number;
+    String color;
+    int capacity;
+    final String type = "";
 
     //Constructors
     public Vehicle() {
-        vehicleMake = "";
-        vehicleNumber = "";
-        vehicleColor = "";
-        vehicleCapacity = 0;
+        make = "";
+        number = "";
+        color = "";
+        capacity = 0;
     }
 
     public Vehicle(String make, String number, String color, int capacity) {
-        vehicleMake = make;
-        vehicleNumber = number;
-        vehicleColor = color;
-        vehicleCapacity = capacity;
+        this.make = make;
+        this.number = number; //can be up to 8
+        this.color = color;
+        this.capacity = capacity;
     }
 
-    //Getters and setters
-    public String getVehicleMake() {
-        return vehicleMake;
+    //Getters
+    public String getMake() {
+        return make;
     }
 
-    public void setVehicleMake(String vehicleMake) {
-        this.vehicleMake = vehicleMake;
+    public String getNumber() {
+        return number;
     }
 
-    public String getVehicleNumber() {
-        return vehicleNumber;
+    public String getColor() {
+        return color;
     }
 
-    public void setVehicleNumber(String vehicleNumber) {
-        this.vehicleNumber = vehicleNumber;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public String getVehicleColor() {
-        return vehicleColor;
+    public String getType() {
+        return type;
     }
 
-    public void setVehicleColor(String vehicleColor) {
-        this.vehicleColor = vehicleColor;
+    //Setters
+    public void setMake(String vehicleMake) {
+        this.make = vehicleMake;
     }
 
-    public int getVehicleCapacity() {
-        return vehicleCapacity;
+    public void setNumber(String vehicleNumber) {
+        this.number = vehicleNumber;
     }
 
-    public void setVehicleCapacity(int vehicleCapacity) {
-        this.vehicleCapacity = vehicleCapacity;
+    public void setColor(String vehicleColor) {
+        this.color = vehicleColor;
     }
 
-    public String getVehicleType() {
-        return vehicleType;
+    public void setCapacity(int vehicleCapacity) {
+        this.capacity = vehicleCapacity;
     }
 
-    //PRINT methods
+    //Print methods
     public String getFull() {
-        return this.getVehicleColor() + " " + this.getVehicleMake() + " " + this.getVehicleType();
+        return color + " " + make + " " + type;
     }
 
     public void print() {
-        System.out.println(this.getFull());
+        System.out.println(getFull());
     }
-
 }

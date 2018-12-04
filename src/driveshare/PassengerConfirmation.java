@@ -1,16 +1,13 @@
 package driveshare;
 
-/**
- *
- * @author Caroline
- */
 public class PassengerConfirmation extends javax.swing.JFrame {
 
     /**
      * Creates new form PassengerConfirmation
      */
-    public PassengerConfirmation() {
+    public PassengerConfirmation(Passenger passenger) {
         initComponents();
+        this.passenger = passenger;
     }
 
     /**
@@ -146,12 +143,13 @@ public class PassengerConfirmation extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-        new Schedule().setVisible(true);
+        new PassengerGUI(passenger).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_confirmButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        new DriverAvailability().setVisible(true);
+        //Placeholder line to enable navigation
+        new DriverAvailability(passenger).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
@@ -185,7 +183,7 @@ public class PassengerConfirmation extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PassengerConfirmation().setVisible(true);
+                new PassengerConfirmation(new Passenger()).setVisible(true);
             }
         });
     }
@@ -205,4 +203,5 @@ public class PassengerConfirmation extends javax.swing.JFrame {
     private javax.swing.JTextField pickupLocationText;
     private javax.swing.JTextField pickupTimeText;
     // End of variables declaration//GEN-END:variables
+    Passenger passenger;
 }
