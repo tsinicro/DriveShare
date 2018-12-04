@@ -127,8 +127,8 @@ public class DriverGUI extends javax.swing.JFrame {
         } else {
             //This checks dates for numeric sense
             try {
-                if (!(Integer.parseInt(date.getText().substring(0, 3)) > 0 && Integer.parseInt(date.getText().substring(0, 3)) <= 31
-                        && Integer.parseInt(date.getText().substring(4, 6)) > 0 && Integer.parseInt(date.getText().substring(4, 6)) <= 12
+                if (!(Integer.parseInt(date.getText().substring(0, 2)) > 0 && Integer.parseInt(date.getText().substring(0, 2)) <= 31
+                        && Integer.parseInt(date.getText().substring(3, 5)) > 0 && Integer.parseInt(date.getText().substring(3, 5)) <= 12
                         && Integer.parseInt(date.getText().substring(6)) > 0)) {
                     throw new Exception();
                 }
