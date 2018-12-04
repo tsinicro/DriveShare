@@ -5,6 +5,25 @@ public class CreateDriver extends javax.swing.JFrame {
     /**
      * Creates new form CreateDriver
      */
+    public CreateDriver(Driver driver, String vehicleType) {
+        initComponents();
+        this.user = driver;
+        license.setText(driver.getLicense());
+        number.setText(driver.getVehicle().getNumber());
+        make.setText(driver.getVehicle().getMake());
+        color.setText(driver.getVehicle().getColor());
+        capacity.setText("" + driver.getVehicle().getCapacity());
+        if (vehicleType.equalsIgnoreCase("car")) {
+            isCar.setSelected(true);
+        } else if (vehicleType.equalsIgnoreCase("van")) {
+            isVan.setSelected(true);
+        } else if (vehicleType.equalsIgnoreCase("tractor")) {
+            isTractor.setSelected(true);
+        } else if (vehicleType.equalsIgnoreCase("truck")) {
+            isTruck.setSelected(true);
+        }
+    }
+
     public CreateDriver(User user) {
         initComponents();
         this.user = user;
@@ -19,6 +38,7 @@ public class CreateDriver extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        vehicleTypeSelector = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         license = new javax.swing.JTextField();
@@ -33,6 +53,12 @@ public class CreateDriver extends javax.swing.JFrame {
         capacity = new javax.swing.JTextField();
         submit = new javax.swing.JButton();
         back = new javax.swing.JButton();
+        isCar = new javax.swing.JRadioButton();
+        isVan = new javax.swing.JRadioButton();
+        isTractor = new javax.swing.JRadioButton();
+        isTruck = new javax.swing.JRadioButton();
+
+        vehicleTypeSelector.add(isCar); vehicleTypeSelector.add(isVan); vehicleTypeSelector.add(isTractor); vehicleTypeSelector.add(isTruck);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,16 +92,24 @@ public class CreateDriver extends javax.swing.JFrame {
             }
         });
 
+        isCar.setText("car");
+
+        isVan.setText("van");
+
+        isTractor.setText("tractor");
+
+        isTruck.setText("truck");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(submit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
@@ -88,6 +122,7 @@ public class CreateDriver extends javax.swing.JFrame {
                                 .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -95,12 +130,19 @@ public class CreateDriver extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(color))
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addComponent(color)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(capacity, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(capacity, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(isCar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(isVan)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(isTractor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(isTruck)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -128,10 +170,16 @@ public class CreateDriver extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(capacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(isCar)
+                    .addComponent(isVan)
+                    .addComponent(isTractor)
+                    .addComponent(isTruck))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(back)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -160,9 +208,21 @@ public class CreateDriver extends javax.swing.JFrame {
                 new Error("Capacity isn't numeric.").setVisible(true);
                 return;
             }
-            DriveShare.driverList.add(new Driver(user, license.getText(), new Vehicle(make.getText(), number.getText(), color.getText(), Integer.parseInt(capacity.getText()))));
-            new LogIn().setVisible(true);
-            this.dispose();
+            if (isCar.isSelected()) {
+                new CreateDriverVehicle(new Driver(user, license.getText(), new Vehicle(make.getText(), number.getText(), color.getText(), Integer.parseInt(capacity.getText()))), "car").setVisible(true);
+                this.dispose();
+            } else if (isVan.isSelected()) {
+                new CreateDriverVehicle(new Driver(user, license.getText(), new Vehicle(make.getText(), number.getText(), color.getText(), Integer.parseInt(capacity.getText()))), "van").setVisible(true);
+                this.dispose();
+            } else if (isTractor.isSelected()) {
+                new CreateDriverVehicle(new Driver(user, license.getText(), new Vehicle(make.getText(), number.getText(), color.getText(), Integer.parseInt(capacity.getText()))), "tractor").setVisible(true);
+                this.dispose();
+            } else if (isTruck.isSelected()) {
+                new CreateDriverVehicle(new Driver(user, license.getText(), new Vehicle(make.getText(), number.getText(), color.getText(), Integer.parseInt(capacity.getText()))), "truck").setVisible(true);
+                this.dispose();
+            } else {
+                new Error("Vehicle type isn't selected.").setVisible(true);
+            }
         }
     }//GEN-LAST:event_submitActionPerformed
 
@@ -205,6 +265,10 @@ public class CreateDriver extends javax.swing.JFrame {
     private javax.swing.JButton back;
     private javax.swing.JTextField capacity;
     private javax.swing.JTextField color;
+    private javax.swing.JRadioButton isCar;
+    private javax.swing.JRadioButton isTractor;
+    private javax.swing.JRadioButton isTruck;
+    private javax.swing.JRadioButton isVan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -216,6 +280,7 @@ public class CreateDriver extends javax.swing.JFrame {
     private javax.swing.JTextField make;
     private javax.swing.JTextField number;
     private javax.swing.JButton submit;
+    private javax.swing.ButtonGroup vehicleTypeSelector;
     // End of variables declaration//GEN-END:variables
     private User user;
 }
