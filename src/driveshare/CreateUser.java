@@ -260,14 +260,22 @@ public class CreateUser extends javax.swing.JFrame {
         } else {
             //Check for numeric zip code
             try {
-                Integer.parseInt(zipCode.getText());
+                //Check for positive zip code
+                if (Integer.parseInt(zipCode.getText()) < 0) {
+                    new Error("Zip code isn't positive").setVisible(true);
+                    return;
+                }
             } catch (NumberFormatException e) {
-                new Error("Zip code isn't numeric.").setVisible(true);
+                new Error("Zip code isn't numeric and whole.").setVisible(true);
                 return;
             }
             //Check for numeric phone
             try {
-                Long.parseLong(phone.getText());
+                //Check for positive phone
+                if (Integer.parseInt(phone.getText()) < 0) {
+                    new Error("Phone isn't positive.").setVisible(true);
+                    return;
+                }
             } catch (NumberFormatException e) {
                 new Error("Phone isn't numeric.").setVisible(true);
                 return;

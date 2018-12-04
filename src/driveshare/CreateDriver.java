@@ -176,9 +176,9 @@ public class CreateDriver extends javax.swing.JFrame {
                     .addComponent(isTractor)
                     .addComponent(isTruck))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(back)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(back)
                 .addContainerGap())
         );
 
@@ -203,9 +203,13 @@ public class CreateDriver extends javax.swing.JFrame {
         } else {
             //Check for numeric capacity
             try {
-                Integer.parseInt(capacity.getText());
+                //Check for positive capacity
+                if (Integer.parseInt(capacity.getText()) < 0) {
+                    new Error("Capacity isn't positive.").setVisible(true);
+                    return;
+                }
             } catch (NumberFormatException e) {
-                new Error("Capacity isn't numeric.").setVisible(true);
+                new Error("Capacity isn't numeric and whole.").setVisible(true);
                 return;
             }
             if (isCar.isSelected()) {

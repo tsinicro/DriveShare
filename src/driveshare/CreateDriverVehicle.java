@@ -1,5 +1,7 @@
 package driveshare;
 
+import static driveshare.DriveShare.driverList;
+
 public class CreateDriverVehicle extends javax.swing.JFrame {
 
     /**
@@ -7,6 +9,10 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
      */
     public CreateDriverVehicle(Driver driver, String vehicleType) {
         initComponents();
+        this.driver = driver;
+        this.vehicleType = vehicleType;
+
+        //Hide all components
         jLabel1.setVisible(false);
         carHeatedSeats.setVisible(false);
         AC.setVisible(false);
@@ -14,12 +20,12 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
         aux.setVisible(false);
         jLabel2.setVisible(false);
         jLabel3.setVisible(false);
-        vanHeight.setVisible(false);
+        height.setVisible(false);
         jLabel4.setVisible(false);
-        vanWeight.setVisible(false);
+        weight.setVisible(false);
         jLabel5.setVisible(false);
         doorType.setVisible(false);
-        disablityAccessible.setVisible(false);
+        disabilityAccessible.setVisible(false);
         jLabel6.setVisible(false);
         jLabel7.setVisible(false);
         useType.setVisible(false);
@@ -34,22 +40,23 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
         stepHeight.setVisible(false);
         truckHeatedSeats.setVisible(false);
 
+        //Show relevant components
         if (vehicleType.equalsIgnoreCase("car")) {
             jLabel1.setVisible(true);
             carHeatedSeats.setVisible(true);
             AC.setVisible(true);
             cupholders.setVisible(true);
             aux.setVisible(true);
-        } else if (vehicleType.equalsIgnoreCase("car")) {
+        } else if (vehicleType.equalsIgnoreCase("van")) {
             jLabel2.setVisible(true);
             jLabel3.setVisible(true);
-            vanHeight.setVisible(true);
+            height.setVisible(true);
             jLabel4.setVisible(true);
-            vanWeight.setVisible(true);
+            weight.setVisible(true);
             jLabel5.setVisible(true);
             doorType.setVisible(true);
-            disablityAccessible.setVisible(true);
-        } else if (vehicleType.equalsIgnoreCase("car")) {
+            disabilityAccessible.setVisible(true);
+        } else if (vehicleType.equalsIgnoreCase("tractor")) {
             jLabel6.setVisible(true);
             jLabel7.setVisible(true);
             useType.setVisible(true);
@@ -57,7 +64,7 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
             turnType.setVisible(true);
             jLabel9.setVisible(true);
             maxSpeed.setVisible(true);
-        } else if (vehicleType.equalsIgnoreCase("car")) {
+        } else if (vehicleType.equalsIgnoreCase("truck")) {
             jLabel10.setVisible(true);
             jLabel11.setVisible(true);
             bedType.setVisible(true);
@@ -65,6 +72,8 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
             stepHeight.setVisible(true);
             truckHeatedSeats.setVisible(false);
         }
+        //Fit frame to content
+        pack();
     }
 
     /**
@@ -83,12 +92,12 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
         aux = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        vanHeight = new javax.swing.JTextField();
+        height = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        vanWeight = new javax.swing.JTextField();
+        weight = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         doorType = new javax.swing.JTextField();
-        disablityAccessible = new javax.swing.JCheckBox();
+        disabilityAccessible = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
         useType = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -119,7 +128,7 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
         aux.setText("Aux");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel2.setText("Ceate Van");
+        jLabel2.setText("Create Van");
 
         jLabel3.setText("Height (ft):");
 
@@ -127,7 +136,7 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
 
         jLabel5.setText("Door Type:");
 
-        disablityAccessible.setText("Disability Accessible");
+        disabilityAccessible.setText("Disability Accessible");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel6.setText("Create Tractor");
@@ -146,11 +155,6 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
         jLabel12.setText("Step Height (ft):");
 
         truckHeatedSeats.setText("Heated Seats");
-        truckHeatedSeats.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                truckHeatedSeatsActionPerformed(evt);
-            }
-        });
 
         submit.setText("Submit");
         submit.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +164,11 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
         });
 
         back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -187,11 +196,11 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(vanHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(height, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(vanWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(weight, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -205,7 +214,7 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(doorType, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(disablityAccessible))
+                        .addComponent(disabilityAccessible))
                     .addComponent(jLabel1)
                     .addComponent(submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -234,15 +243,15 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(vanHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(height, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
-                    .addComponent(vanWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(weight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(doorType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(disablityAccessible))
+                    .addComponent(disabilityAccessible))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -275,13 +284,96 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void truckHeatedSeatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_truckHeatedSeatsActionPerformed
-    }//GEN-LAST:event_truckHeatedSeatsActionPerformed
-
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        new LogIn().setVisible(true);
-        this.dispose();
+        System.out.println();
+        if (vehicleType.equalsIgnoreCase("car")) {
+            driver.setVehicle(new Car(driver.getVehicle(), carHeatedSeats.isSelected(), AC.isSelected(), cupholders.isSelected(), aux.isSelected()));
+            driverList.add(driver);
+            new LogIn().setVisible(true);
+            this.dispose();
+        } else if (vehicleType.equalsIgnoreCase("van")) {
+            //Check for blank fields
+            if (height.getText().equals("") || weight.getText().equals("") || doorType.getText().equals("")) {
+                new Error("Fields are blank.").setVisible(true);
+            } else {
+                //Check for numeric weight
+                try {
+                    //Check for positive height
+                    if (Integer.parseInt(height.getText()) < 0) {
+                        new Error("Height isn't positive.").setVisible(true);
+                        return;
+                    }
+                } catch (NumberFormatException e) {
+                    new Error("Height isn't numeric and whole.").setVisible(true);
+                    return;
+                }
+                //Check for numeric height
+                try {
+                    //Check for positive weight
+                    if (Integer.parseInt(weight.getText()) < 0) {
+                        new Error("Weight must be positive.").setVisible(true);
+                        return;
+                    }
+                } catch (NumberFormatException e) {
+                    new Error("Weight isn't numeric and whole.").setVisible(true);
+                    return;
+                }
+                driver.setVehicle(new Van(driver.getVehicle(), Integer.parseInt(height.getText()), Integer.parseInt(weight.getText()), doorType.getText(), disabilityAccessible.isSelected()));
+                driverList.add(driver);
+                new LogIn().setVisible(true);
+                this.dispose();
+            }
+        } else if (vehicleType.equalsIgnoreCase("tractor")) {
+            //Check for blank fields
+            if (useType.getText().equals("") || turnType.getText().equals("") || maxSpeed.getText().equals("")) {
+                new Error("Fields are blank.").setVisible(true);
+            } else {
+                //Check for numeric max speed
+                try {
+                    //Check for positive max speed
+                    if (Integer.parseInt(maxSpeed.getText()) < 0) {
+                        new Error("Max speed isn't positive.").setVisible(true);
+                        return;
+                    }
+                } catch (NumberFormatException e) {
+                    new Error("Max Speed isn't numeric and whole.").setVisible(true);
+                    return;
+                }
+                driver.setVehicle(new Tractor(driver.getVehicle(), useType.getText(), turnType.getText(), Integer.parseInt(maxSpeed.getText())));
+                driverList.add(driver);
+                new LogIn().setVisible(true);
+                this.dispose();
+            }
+        } else if (vehicleType.equalsIgnoreCase("truck")) {
+            //Check for blank fields
+            if (bedType.getText().equals("") || stepHeight.getText().equals("")) {
+                new Error("Fields are blank.").setVisible(true);
+            } else {
+                //Check for numeric step height
+                try {
+                    //Check for positive step height
+                    if (Integer.parseInt(stepHeight.getText()) < 0) {
+                        new Error("Step height isn't positive.").setVisible(true);
+                        return;
+                    }
+                } catch (NumberFormatException e) {
+                    new Error("Step height isn't numeric and whole.").setVisible(true);
+                    return;
+                }
+                driver.setVehicle(new Truck(driver.getVehicle(), bedType.getText(), Integer.parseInt(stepHeight.getText()), truckHeatedSeats.isSelected()));
+                driverList.add(driver);
+                new LogIn().setVisible(true);
+                this.dispose();
+            }
+        } else {
+            new LogIn().setVisible(true);
+            this.dispose();
+        }
      }//GEN-LAST:event_submitActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,7 +405,7 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CreateDriverVehicle(new Driver(), "car").setVisible(true);
+                new CreateDriverVehicle(new Driver(), "").setVisible(true);
             }
         });
     }
@@ -325,8 +417,9 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
     private javax.swing.JTextField bedType;
     private javax.swing.JCheckBox carHeatedSeats;
     private javax.swing.JCheckBox cupholders;
-    private javax.swing.JCheckBox disablityAccessible;
+    private javax.swing.JCheckBox disabilityAccessible;
     private javax.swing.JTextField doorType;
+    private javax.swing.JTextField height;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -345,7 +438,8 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
     private javax.swing.JCheckBox truckHeatedSeats;
     private javax.swing.JTextField turnType;
     private javax.swing.JTextField useType;
-    private javax.swing.JTextField vanHeight;
-    private javax.swing.JTextField vanWeight;
+    private javax.swing.JTextField weight;
     // End of variables declaration//GEN-END:variables
+    Driver driver;
+    String vehicleType;
 }

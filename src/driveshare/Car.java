@@ -24,6 +24,14 @@ public class Car extends Vehicle {
         this.cupholders = cupholders;
         this.aux = aux;
     }
+    
+    public Car(Vehicle vehicle, boolean heatedSeats, boolean AC, boolean cupholders, boolean aux) {
+        super(vehicle);
+        this.heatedSeats = heatedSeats;
+        this.AC = AC;
+        this.cupholders = cupholders;
+        this.aux = aux;
+    }
 
     //Getters
     public boolean getHeatedSeats() {

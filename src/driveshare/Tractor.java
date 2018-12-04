@@ -3,9 +3,9 @@ package driveshare;
 public class Tractor extends Vehicle {
 
     //Variables
-    int maxSpeed;
     String useType;
     String turnType;
+    int maxSpeed;
 
     //Constructors
     public Tractor() {
@@ -15,18 +15,21 @@ public class Tractor extends Vehicle {
         turnType = "";
     }
 
-    public Tractor(String make, String number, String color, int capacity, int maxSpeed, String useType, String turnType) {
+    public Tractor(String make, String number, String color, int capacity, String useType, String turnType, int maxSpeed) {
         super(make, number, color, capacity);
-        this.maxSpeed = maxSpeed;
         this.useType = useType;
         this.turnType = turnType;
+        this.maxSpeed = maxSpeed;
+    }
+
+    public Tractor(Vehicle vehicle, String useType, String turnType, int maxSpeed) {
+        super(vehicle);
+        this.useType = useType;
+        this.turnType = turnType;
+        this.maxSpeed = maxSpeed;
     }
 
     //Getter 
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
     public String getUseType() {
         return useType;
     }
@@ -35,17 +38,21 @@ public class Tractor extends Vehicle {
         return turnType;
     }
 
-    //Setters
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+    public int getMaxSpeed() {
+        return maxSpeed;
     }
 
+    //Setters
     public void setType(String useType) {
         this.useType = useType;
     }
 
     public void setTurnType(String turnType) {
         this.turnType = turnType;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
     }
 
 }

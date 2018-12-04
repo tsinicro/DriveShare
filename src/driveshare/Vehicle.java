@@ -19,9 +19,16 @@ public class Vehicle implements Print {
 
     public Vehicle(String make, String number, String color, int capacity) {
         this.make = make;
-        this.number = number; //can be up to 8
+        this.number = number;
         this.color = color;
         this.capacity = capacity;
+    }
+    
+    public Vehicle(Vehicle vehicle) {
+        make= vehicle.getMake();
+        number = vehicle.getNumber();
+        color = vehicle.getColor();
+        capacity = vehicle.getCapacity();
     }
 
     //Getters

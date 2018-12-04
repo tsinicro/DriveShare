@@ -26,6 +26,14 @@ public class Van extends Vehicle {
         this.disabilityAccessible = disabilityAccessible;
     }
 
+    public Van(Vehicle vehicle, int height, int weight, String doorType, boolean disabilityAccessible) {
+        super(vehicle);
+        this.height = height;
+        this.weight = weight;
+        this.doorType = doorType;
+        this.disabilityAccessible = disabilityAccessible;
+    }
+
     //Getters
     public int getHeight() {
         return height;

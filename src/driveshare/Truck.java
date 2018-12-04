@@ -4,7 +4,7 @@ public class Truck extends Vehicle {
 
     //Variables
     String bedType;
-    String stepHeight;
+    int stepHeight;
     boolean heatedSeats;
     final String vehicleType = "truck";
 
@@ -12,12 +12,19 @@ public class Truck extends Vehicle {
     public Truck() {
         super();
         bedType = "";
-        stepHeight = "";
+        stepHeight = 0;
         heatedSeats = false;
     }
 
-    public Truck(String make, String number, String color, int capacity, String bedType, String stepHeight, boolean heatedSeats) {
+    public Truck(String make, String number, String color, int capacity, String bedType, int stepHeight, boolean heatedSeats) {
         super(make, number, color, capacity);
+        this.bedType = bedType;
+        this.stepHeight = stepHeight;
+        this.heatedSeats = heatedSeats;
+    }
+    
+    public Truck(Vehicle vehicle, String bedType, int stepHeight, boolean heatedSeats) {
+        super(vehicle);
         this.bedType = bedType;
         this.stepHeight = stepHeight;
         this.heatedSeats = heatedSeats;
@@ -28,7 +35,7 @@ public class Truck extends Vehicle {
         return bedType;
     }
 
-    public String getStepHeight() {
+    public int getStepHeight() {
         return stepHeight;
     }
 
@@ -41,7 +48,7 @@ public class Truck extends Vehicle {
         this.bedType = bedType;
     }
 
-    public void setStepHeight(String stepHeight) {
+    public void setStepHeight(int stepHeight) {
         this.stepHeight = stepHeight;
     }
 
