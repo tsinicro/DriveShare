@@ -51,7 +51,7 @@ public class CreateDriver extends javax.swing.JFrame {
         color = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         capacity = new javax.swing.JTextField();
-        submit = new javax.swing.JButton();
+        next = new javax.swing.JButton();
         back = new javax.swing.JButton();
         isCar = new javax.swing.JRadioButton();
         isVan = new javax.swing.JRadioButton();
@@ -78,10 +78,10 @@ public class CreateDriver extends javax.swing.JFrame {
 
         jLabel7.setText("Capacity:");
 
-        submit.setText("Submit");
-        submit.addActionListener(new java.awt.event.ActionListener() {
+        next.setText("Next");
+        next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
+                nextActionPerformed(evt);
             }
         });
 
@@ -108,7 +108,7 @@ public class CreateDriver extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(next, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -178,7 +178,7 @@ public class CreateDriver extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(back)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(next, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -190,7 +190,7 @@ public class CreateDriver extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backActionPerformed
 
-    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         //Check for blank fields
         if (license.getText().equals("") || number.getText().equals("") || make.getText().equals("") || color.getText().equals("") || capacity.getText().equals("")) {
             new Error("Fields are blank.").setVisible(true);
@@ -224,7 +224,7 @@ public class CreateDriver extends javax.swing.JFrame {
                 new Error("Vehicle type isn't selected.").setVisible(true);
             }
         }
-    }//GEN-LAST:event_submitActionPerformed
+    }//GEN-LAST:event_nextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,8 +278,8 @@ public class CreateDriver extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField license;
     private javax.swing.JTextField make;
+    private javax.swing.JButton next;
     private javax.swing.JTextField number;
-    private javax.swing.JButton submit;
     private javax.swing.ButtonGroup vehicleTypeSelector;
     // End of variables declaration//GEN-END:variables
     private User user;

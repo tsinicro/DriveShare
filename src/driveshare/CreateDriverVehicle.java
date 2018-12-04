@@ -7,10 +7,64 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
      */
     public CreateDriverVehicle(Driver driver, String vehicleType) {
         initComponents();
-        /*
-        new LogIn().setVisible(true);
-            this.dispose();
-        */
+        jLabel1.setVisible(false);
+        carHeatedSeats.setVisible(false);
+        AC.setVisible(false);
+        cupholders.setVisible(false);
+        aux.setVisible(false);
+        jLabel2.setVisible(false);
+        jLabel3.setVisible(false);
+        vanHeight.setVisible(false);
+        jLabel4.setVisible(false);
+        vanWeight.setVisible(false);
+        jLabel5.setVisible(false);
+        doorType.setVisible(false);
+        disablityAccessible.setVisible(false);
+        jLabel6.setVisible(false);
+        jLabel7.setVisible(false);
+        useType.setVisible(false);
+        jLabel8.setVisible(false);
+        turnType.setVisible(false);
+        jLabel9.setVisible(false);
+        maxSpeed.setVisible(false);
+        jLabel10.setVisible(false);
+        jLabel11.setVisible(false);
+        bedType.setVisible(false);
+        jLabel12.setVisible(false);
+        stepHeight.setVisible(false);
+        truckHeatedSeats.setVisible(false);
+
+        if (vehicleType.equalsIgnoreCase("car")) {
+            jLabel1.setVisible(true);
+            carHeatedSeats.setVisible(true);
+            AC.setVisible(true);
+            cupholders.setVisible(true);
+            aux.setVisible(true);
+        } else if (vehicleType.equalsIgnoreCase("car")) {
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            vanHeight.setVisible(true);
+            jLabel4.setVisible(true);
+            vanWeight.setVisible(true);
+            jLabel5.setVisible(true);
+            doorType.setVisible(true);
+            disablityAccessible.setVisible(true);
+        } else if (vehicleType.equalsIgnoreCase("car")) {
+            jLabel6.setVisible(true);
+            jLabel7.setVisible(true);
+            useType.setVisible(true);
+            jLabel8.setVisible(true);
+            turnType.setVisible(true);
+            jLabel9.setVisible(true);
+            maxSpeed.setVisible(true);
+        } else if (vehicleType.equalsIgnoreCase("car")) {
+            jLabel10.setVisible(true);
+            jLabel11.setVisible(true);
+            bedType.setVisible(true);
+            jLabel12.setVisible(true);
+            stepHeight.setVisible(true);
+            truckHeatedSeats.setVisible(false);
+        }
     }
 
     /**
@@ -22,21 +76,212 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        carHeatedSeats = new javax.swing.JCheckBox();
+        AC = new javax.swing.JCheckBox();
+        cupholders = new javax.swing.JCheckBox();
+        aux = new javax.swing.JCheckBox();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        vanHeight = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        vanWeight = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        doorType = new javax.swing.JTextField();
+        disablityAccessible = new javax.swing.JCheckBox();
+        jLabel6 = new javax.swing.JLabel();
+        useType = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        turnType = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        maxSpeed = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        bedType = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        stepHeight = new javax.swing.JTextField();
+        truckHeatedSeats = new javax.swing.JCheckBox();
+        submit = new javax.swing.JButton();
+        back = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setText("Create Car");
+
+        carHeatedSeats.setText("Heated Seats");
+
+        AC.setText("AC");
+
+        cupholders.setText("Cupholders");
+
+        aux.setText("Aux");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel2.setText("Ceate Van");
+
+        jLabel3.setText("Height (ft):");
+
+        jLabel4.setText("Weight (lbs):");
+
+        jLabel5.setText("Door Type:");
+
+        disablityAccessible.setText("Disability Accessible");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel6.setText("Create Tractor");
+
+        jLabel7.setText("Use Type:");
+
+        jLabel8.setText("Turn Type:");
+
+        jLabel9.setText("Max Speed (mph):");
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel10.setText("Create Truck");
+
+        jLabel11.setText("Bed Type:");
+
+        jLabel12.setText("Step Height (ft):");
+
+        truckHeatedSeats.setText("Heated Seats");
+        truckHeatedSeats.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                truckHeatedSeatsActionPerformed(evt);
+            }
+        });
+
+        submit.setText("Submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitActionPerformed(evt);
+            }
+        });
+
+        back.setText("Back");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(carHeatedSeats)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AC)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cupholders)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(aux))
+                    .addComponent(jLabel6)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(maxSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel10)
+                    .addComponent(truckHeatedSeats)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(vanHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(vanWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(useType, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(turnType, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(doorType, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(disablityAccessible))
+                    .addComponent(jLabel1)
+                    .addComponent(submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bedType, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(stepHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(carHeatedSeats)
+                    .addComponent(AC)
+                    .addComponent(cupholders)
+                    .addComponent(aux))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(vanHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(vanWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(doorType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(disablityAccessible))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(useType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(turnType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(maxSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(stepHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bedType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(truckHeatedSeats)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(back)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void truckHeatedSeatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_truckHeatedSeatsActionPerformed
+    }//GEN-LAST:event_truckHeatedSeatsActionPerformed
+
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+        new LogIn().setVisible(true);
+        this.dispose();
+     }//GEN-LAST:event_submitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -68,11 +313,39 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CreateDriverVehicle(new Driver(), "").setVisible(true);
+                new CreateDriverVehicle(new Driver(), "car").setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox AC;
+    private javax.swing.JCheckBox aux;
+    private javax.swing.JButton back;
+    private javax.swing.JTextField bedType;
+    private javax.swing.JCheckBox carHeatedSeats;
+    private javax.swing.JCheckBox cupholders;
+    private javax.swing.JCheckBox disablityAccessible;
+    private javax.swing.JTextField doorType;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField maxSpeed;
+    private javax.swing.JTextField stepHeight;
+    private javax.swing.JButton submit;
+    private javax.swing.JCheckBox truckHeatedSeats;
+    private javax.swing.JTextField turnType;
+    private javax.swing.JTextField useType;
+    private javax.swing.JTextField vanHeight;
+    private javax.swing.JTextField vanWeight;
     // End of variables declaration//GEN-END:variables
 }
