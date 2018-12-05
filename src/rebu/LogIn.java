@@ -1,7 +1,7 @@
-package driveshare;
+package rebu;
 
-import static driveshare.DriveShare.passengerList;
-import static driveshare.DriveShare.driverList;
+import static rebu.RebU.passengerList;
+import static rebu.RebU.driverList;
 
 public class LogIn extends javax.swing.JFrame {
 

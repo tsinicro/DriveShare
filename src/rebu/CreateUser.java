@@ -1,7 +1,7 @@
-package driveshare;
+package rebu;
 
-import static driveshare.DriveShare.driverList;
-import static driveshare.DriveShare.passengerList;
+import static rebu.RebU.driverList;
+import static rebu.RebU.passengerList;
 
 public class CreateUser extends javax.swing.JFrame {
 
@@ -272,7 +272,7 @@ public class CreateUser extends javax.swing.JFrame {
             //Check for numeric phone
             try {
                 //Check for positive phone
-                if (Integer.parseInt(phone.getText()) < 0) {
+                if (Long.parseLong(phone.getText()) < 0) {
                     new Error("Phone isn't positive.").setVisible(true);
                     return;
                 }

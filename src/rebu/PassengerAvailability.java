@@ -1,13 +1,28 @@
-package driveshare;
+package rebu;
 
-public class CreatePassenger extends javax.swing.JFrame {
+import static rebu.RebU.tripList;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+
+public class PassengerAvailability extends javax.swing.JFrame {
 
     /**
-     * Creates new form CreatePassenger
+     * Creates new form PassengerAvaliability
      */
-    public CreatePassenger(User user) {
+    public PassengerAvailability(Driver driver, Origin origin) {
         initComponents();
-        this.user = user;
+        this.driver = driver;
+        this.origin = origin;
+        for (Trip trip : tripList) {
+            if (trip.getOrigin().getDate().equals(origin.getDate())
+                    && trip.getOrigin().getLocation().getAddress().getState().equals(origin.getLocation().getAddress().getState())
+                    && trip.getOrigin().getLocation().getAddress().getCity().equals(origin.getLocation().getAddress().getCity())) {
+                //Remember to add disability and capacity verification here
+                availableTripList.add(trip);
+            }
+        }
+        //passengers.setModel(new DefaultComboBoxModel(s));
+
     }
 
     /**
@@ -20,28 +35,28 @@ public class CreatePassenger extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        disability = new javax.swing.JCheckBox();
-        submit = new javax.swing.JButton();
+        passengers = new javax.swing.JComboBox<>();
         back = new javax.swing.JButton();
+        select = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("Create Passenger");
+        jLabel1.setText("Passenger Availability");
 
-        disability.setText("Disability");
-
-        submit.setText("Submit");
-        submit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
-            }
-        });
+        passengers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Daisy Buchanan - 2 Passengers" }));
 
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
+            }
+        });
+
+        select.setText("Select");
+        select.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectActionPerformed(evt);
             }
         });
 
@@ -52,11 +67,12 @@ public class CreatePassenger extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(disability))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(select, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(passengers, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -65,9 +81,9 @@ public class CreatePassenger extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(disability)
+                .addComponent(passengers, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(select, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(back)
                 .addContainerGap())
@@ -76,16 +92,16 @@ public class CreatePassenger extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        DriveShare.passengerList.add(new Passenger(user, disability.isSelected()));
-        new LogIn().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_submitActionPerformed
-
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        new CreateUser(user, "passenger").setVisible(true);
+        new DriverGUI(driver, origin).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backActionPerformed
+
+    private void selectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectActionPerformed
+        //Placeholder line to enable navigation
+        new DriverConfirmation(driver).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_selectActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,29 +120,32 @@ public class CreatePassenger extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CreatePassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PassengerAvailability.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CreatePassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PassengerAvailability.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CreatePassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PassengerAvailability.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CreatePassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PassengerAvailability.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CreatePassenger(new User()).setVisible(true);
+                new PassengerAvailability(new Driver(), new Origin()).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
-    private javax.swing.JCheckBox disability;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton submit;
+    private javax.swing.JComboBox<String> passengers;
+    private javax.swing.JButton select;
     // End of variables declaration//GEN-END:variables
-    User user;
+    Driver driver;
+    Origin origin;
+    ArrayList<Trip> availableTripList = new ArrayList<Trip>();
 }

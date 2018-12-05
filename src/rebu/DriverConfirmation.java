@@ -1,4 +1,4 @@
-package driveshare;
+package rebu;
 
 public class DriverConfirmation extends javax.swing.JFrame {
 
@@ -157,7 +157,7 @@ public class DriverConfirmation extends javax.swing.JFrame {
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         //Placeholder line to enable navigation
-        new PassengerAvaliability(driver, new Origin()).setVisible(true);
+        new PassengerAvailability(driver, new Origin()).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 

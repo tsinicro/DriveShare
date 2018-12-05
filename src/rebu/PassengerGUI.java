@@ -1,4 +1,4 @@
-package driveshare;
+package rebu;
 
 public class PassengerGUI extends javax.swing.JFrame {
 
@@ -54,7 +54,7 @@ public class PassengerGUI extends javax.swing.JFrame {
         jLabel1.setText("Date:");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel2.setText("Schedule a Ride");
+        jLabel2.setText("Schedule a Trip");
 
         jLabel3.setText("Number of Passengers:");
 

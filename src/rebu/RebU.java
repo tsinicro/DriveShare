@@ -1,12 +1,20 @@
-package driveshare;
+package rebu;
+//Proposed to do
 
+//PassengerGUI
+//PassengerAvailability
+//DriverConfirmation (map)
+//ViewTrips (status) (removeTrip) (map)
+//Remove DriverAvailability
+//Remove PassengerConfirmation
 import java.util.ArrayList;
 
-public class DriveShare {
+public class RebU {
 
     //Variables
     public static ArrayList<Passenger> passengerList = new ArrayList<Passenger>();
     public static ArrayList<Driver> driverList = new ArrayList<Driver>();
+    public static ArrayList<Trip> tripList = new ArrayList<Trip>();
 
     //This is where the program starts
     public static void main(String[] args) {
