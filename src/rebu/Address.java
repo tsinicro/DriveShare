@@ -19,7 +19,7 @@ public class Address implements Print {
         zipCode = "";
     }
     
-    // Constructor for the allias streetAddress
+   // Initialization 
     public Address(String streetAddress) {
         this.streetAddress = streetAddress;
         city = "";
@@ -28,7 +28,7 @@ public class Address implements Print {
         zipCode = "";
     }
 
-    // Instantiation of the Address variables
+    // Instantiation of the Address variables 
     public Address(String streetAddress, String city, String state, String country, String zipCode) {
         this.streetAddress = streetAddress;
         this.city = city;

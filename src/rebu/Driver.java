@@ -1,5 +1,9 @@
 package rebu;
 
+//This is the Driver class which:
+//Inherits from the User class 
+//Implements the print interface
+
 public class Driver extends User implements Print {
 
     //Variables
@@ -7,12 +11,14 @@ public class Driver extends User implements Print {
     private Vehicle vehicle;
 
     //Constructors
+    // Initializaton 
     public Driver() {
         super();
         license = "";
         vehicle = new Vehicle();
     }
 
+    // Instantiation 
     public Driver(Name name, String password, Address address, Contact contact, String license, Vehicle vehicle) {
         super(name, password, address, contact);
         this.license = license;
@@ -26,19 +32,23 @@ public class Driver extends User implements Print {
     }
 
     //Getters
+    //get licence number
     public String getLicense() {
         return license;
     }
 
+    // get vehicle number
     public Vehicle getVehicle() {
         return vehicle;
     }
 
     //Setters
+    // set vehicle number 
     public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 
+    // set license number 
     public void setLicense(String license) {
         this.license = license;
     }

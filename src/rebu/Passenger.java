@@ -2,6 +2,11 @@ package rebu;
 
 import java.util.ArrayList;
 
+
+// This is the Passenger class which:
+// Inherits from the User class 
+// Implements the Print interface 
+
 public class Passenger extends User implements Print {
 
     //Variables
@@ -24,11 +29,13 @@ public class Passenger extends User implements Print {
     }
 
     //Getters
+    //get disability (T/F)
     public boolean getDisability() {
         return disability;
     }
 
     //Setters
+    //set disability 
     public void setDisability(boolean disability) {
         disability = disability;
     }
