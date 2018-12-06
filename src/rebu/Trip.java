@@ -110,5 +110,10 @@ public class Trip implements Print {
     public void print() {
         System.out.println(getFull());
     }
+    
+    public String mapString(){
+        String wSpaces = destination.address.getStreetAddress() + "," + destination.address.getCity() + "," + destination.address.getState();
+        return wSpaces.replaceAll(" ", "+");
+    }
 
 }
