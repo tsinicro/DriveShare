@@ -330,7 +330,7 @@ public class TripConfirmation extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void viewPassengerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPassengerActionPerformed
-        new ViewPassenger(trip.getPassenger()).setVisible(true);
+        new ViewUser(trip.getPassenger()).setVisible(true);
     }//GEN-LAST:event_viewPassengerActionPerformed
 
     /**

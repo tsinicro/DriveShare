@@ -186,6 +186,11 @@ public class ViewTrips extends javax.swing.JFrame {
         });
 
         viewVehicle.setText("View Vehicle");
+        viewVehicle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewVehicleActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -366,11 +371,11 @@ public class ViewTrips extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void viewPassengerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPassengerActionPerformed
-        new ViewPassenger(user.getTripList().get(index).getPassenger()).setVisible(true);
+        new ViewUser(user.getTripList().get(index).getPassenger()).setVisible(true);
     }//GEN-LAST:event_viewPassengerActionPerformed
 
     private void viewDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDriverActionPerformed
-        new ViewDriver(user.getTripList().get(index).getDriver()).setVisible(true);
+        new ViewUser(user.getTripList().get(index).getDriver()).setVisible(true);
     }//GEN-LAST:event_viewDriverActionPerformed
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
@@ -381,6 +386,10 @@ public class ViewTrips extends javax.swing.JFrame {
         }
         setTrip(index);
     }//GEN-LAST:event_nextActionPerformed
+
+    private void viewVehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewVehicleActionPerformed
+
+    }//GEN-LAST:event_viewVehicleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -407,8 +416,6 @@ public class ViewTrips extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ViewTrips.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
