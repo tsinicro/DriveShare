@@ -40,6 +40,7 @@ public class RebU {
 
         //Begin GUI
         new LogIn().setVisible(true);
+        
     }
 
     //Create users for use in testing
