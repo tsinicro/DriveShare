@@ -1,5 +1,6 @@
 package rebu;
 
+// This is the Print interface methods 
 public interface Print {
 
     //method meant to create a string for all information
