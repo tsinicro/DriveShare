@@ -388,7 +388,7 @@ public class ViewTrips extends javax.swing.JFrame {
     }//GEN-LAST:event_nextActionPerformed
 
     private void viewVehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewVehicleActionPerformed
-
+        new ViewVehicle(user.getTripList().get(index).getDriver().getVehicle()).setVisible(true);
     }//GEN-LAST:event_viewVehicleActionPerformed
 
     /**
