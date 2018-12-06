@@ -15,7 +15,6 @@ public class RebU {
 
     //This is where the program starts
     public static void main(String[] args) {
-
         // Set the Nimbus look and feel. Netbeans makes this in the forms usually to make them nicer.
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

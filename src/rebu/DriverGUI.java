@@ -8,6 +8,11 @@ public class DriverGUI extends javax.swing.JFrame {
     public DriverGUI(Driver driver) {
         initComponents();
         this.driver = driver;
+        //Hide irrelevant fields
+        if (driver.getTripList().isEmpty()) {
+            viewTrips.setVisible(false);
+        }
+        pack();
     }
 
     public DriverGUI(Driver driver, Origin origin) {
@@ -16,6 +21,11 @@ public class DriverGUI extends javax.swing.JFrame {
         date.setText(origin.getDate());
         city.setText(origin.getLocation().getAddress().getCity());
         state.setSelectedItem(origin.getLocation().getAddress().getState());
+        //Hide irrelevant fields
+        if (driver.getTripList().isEmpty()) {
+            viewTrips.setVisible(false);
+        }
+        pack();
     }
 
     /**
@@ -36,6 +46,7 @@ public class DriverGUI extends javax.swing.JFrame {
         submit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         logOut = new javax.swing.JButton();
+        viewTrips = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +75,13 @@ public class DriverGUI extends javax.swing.JFrame {
             }
         });
 
+        viewTrips.setText("View Trips");
+        viewTrips.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewTripsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,7 +104,8 @@ public class DriverGUI extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(submit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(submit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viewTrips, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -109,8 +128,10 @@ public class DriverGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewTrips)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logOut)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -148,6 +169,11 @@ public class DriverGUI extends javax.swing.JFrame {
         new LogIn().setVisible(true);
         dispose();
     }//GEN-LAST:event_logOutActionPerformed
+
+    private void viewTripsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewTripsActionPerformed
+        new ViewTrips(driver).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_viewTripsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,6 +220,7 @@ public class DriverGUI extends javax.swing.JFrame {
     private javax.swing.JButton logOut;
     private javax.swing.JComboBox state;
     private javax.swing.JButton submit;
+    private javax.swing.JButton viewTrips;
     // End of variables declaration//GEN-END:variables
     private Driver driver;
 }

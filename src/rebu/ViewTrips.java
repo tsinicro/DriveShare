@@ -1,31 +1,37 @@
 package rebu;
 
-import java.awt.Color;
-
 public class ViewTrips extends javax.swing.JFrame {
 
     /**
-     * Creates new form Passenger
+     * Creates new form ViewTrips
      */
-    ViewTrips(Driver driver, Trip trip) {
+    public ViewTrips(Passenger passenger) {
         initComponents();
-        this.trip = trip;
-        this.driver = driver;
-        date.setText(trip.getOrigin().getDate());
-        time.setText(trip.getOrigin().getTime());
-        numberPassengers.setText("" + trip.getNumberPassengers());
-        originAddress.setText(trip.getOrigin().getLocation().getAddress().getStreetAddress());
-        originCity.setText(trip.getOrigin().getLocation().getAddress().getCity());
-        originState.setText(trip.getOrigin().getLocation().getAddress().getState());
-        originZipCode.setText(trip.getOrigin().getLocation().getAddress().getZipCode());
-        originCountry.setText(trip.getOrigin().getLocation().getAddress().getCountry());
-        originDescription.setText(trip.getOrigin().getLocation().getDescription());
-        destinationAddress.setText(trip.getDestination().getAddress().getStreetAddress());
-        destinationCity.setText(trip.getDestination().getAddress().getStreetAddress());
-        destinationState.setSelectedItem(trip.getDestination().getAddress().getState());
-        destinationZipCode.setText(trip.getDestination().getAddress().getZipCode());
-        destinationCountry.setText(trip.getDestination().getAddress().getCountry());
-        destinationDescription.setText(trip.getDestination().getDescription());
+        index = 0;
+        setTrip(index);
+        this.user = passenger;
+        //Hide irrelevant content
+        if (user.getTripList().size() == 1) {
+            next.setVisible(false);
+        }
+        viewPassenger.setVisible(false);
+        //Fit frame to content
+        pack();
+    }
+
+    public ViewTrips(Driver driver) {
+        initComponents();
+        index = 0;
+        setTrip(index);
+        this.user = driver;
+        //Hide irrelevant content
+        if (user.getTripList().size() == 1) {
+            next.setVisible(false);
+        }
+        viewDriver.setVisible(false);
+        viewVehicle.setVisible(false);
+        //Fit frame to content
+        pack();
     }
 
     /**
@@ -173,6 +179,11 @@ public class ViewTrips extends javax.swing.JFrame {
         });
 
         next.setText("Next Trip");
+        next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextActionPerformed(evt);
+            }
+        });
 
         viewVehicle.setText("View Vehicle");
 
@@ -326,18 +337,50 @@ public class ViewTrips extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Initialize fields to first trip
+    private void setTrip(int index) {
+        date.setText(user.getTripList().get(index).getOrigin().getDate());
+        time.setText(user.getTripList().get(index).getOrigin().getTime());
+        numberPassengers.setText("" + user.getTripList().get(index).getNumberPassengers());
+        originAddress.setText(user.getTripList().get(index).getOrigin().getLocation().getAddress().getStreetAddress());
+        originCity.setText(user.getTripList().get(index).getOrigin().getLocation().getAddress().getCity());
+        originState.setText(user.getTripList().get(index).getOrigin().getLocation().getAddress().getState());
+        originZipCode.setText(user.getTripList().get(index).getOrigin().getLocation().getAddress().getZipCode());
+        originCountry.setText(user.getTripList().get(index).getOrigin().getLocation().getAddress().getCountry());
+        originDescription.setText(user.getTripList().get(index).getOrigin().getLocation().getDescription());
+        destinationAddress.setText(user.getTripList().get(index).getDestination().getAddress().getStreetAddress());
+        destinationCity.setText(user.getTripList().get(index).getDestination().getAddress().getStreetAddress());
+        destinationState.setSelectedItem(user.getTripList().get(index).getDestination().getAddress().getState());
+        destinationZipCode.setText(user.getTripList().get(index).getDestination().getAddress().getZipCode());
+        destinationCountry.setText(user.getTripList().get(index).getDestination().getAddress().getCountry());
+        destinationDescription.setText(user.getTripList().get(index).getDestination().getDescription());
+    }
+
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        new TripSelection(driver, trip.getOrigin()).setVisible(true);
+        if (user instanceof Driver) {
+            new DriverGUI((Driver) user).setVisible(true);
+        } else if (user instanceof Passenger) {
+            new PassengerGUI((Passenger) user).setVisible(true);
+        }
         dispose();
     }//GEN-LAST:event_backActionPerformed
 
     private void viewPassengerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPassengerActionPerformed
-        new ViewPassenger(trip.getPassenger()).setVisible(true);
+        new ViewPassenger(user.getTripList().get(index).getPassenger()).setVisible(true);
     }//GEN-LAST:event_viewPassengerActionPerformed
 
     private void viewDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDriverActionPerformed
-        // TODO add your handling code here:
+        new ViewDriver(user.getTripList().get(index).getDriver()).setVisible(true);
     }//GEN-LAST:event_viewDriverActionPerformed
+
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        if (index == user.getTripList().size() - 1) {
+            index = 0;
+        } else {
+            index++;
+        }
+        setTrip(index);
+    }//GEN-LAST:event_nextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -372,7 +415,7 @@ public class ViewTrips extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewTrips(new Driver(), new Trip()).setVisible(true);
+                new ViewTrips(new Passenger()).setVisible(true);
             }
         });
     }
@@ -418,6 +461,6 @@ public class ViewTrips extends javax.swing.JFrame {
     private javax.swing.JButton viewPassenger;
     private javax.swing.JButton viewVehicle;
     // End of variables declaration//GEN-END:variables
-    private Trip trip;
-    private Driver driver;
+    private User user;
+    private int index;
 }

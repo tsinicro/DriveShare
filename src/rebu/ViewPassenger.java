@@ -6,7 +6,7 @@ import static rebu.RebU.passengerList;
 public class ViewPassenger extends javax.swing.JFrame {
 
     /**
-     * Creates new form CreateAccount
+     * Creates new form ViewPassenger
      */
     public ViewPassenger(Passenger passenger) {
         initComponents();
@@ -47,9 +47,15 @@ public class ViewPassenger extends javax.swing.JFrame {
 
         jLabel2.setText("First Name:");
 
+        firstName.setEditable(false);
+
         jLabel3.setText("Last Name:");
 
+        lastName.setEditable(false);
+
         jLabel12.setText("Phone:");
+
+        phone.setEditable(false);
 
         close.setText("Close");
         close.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +65,8 @@ public class ViewPassenger extends javax.swing.JFrame {
         });
 
         jLabel4.setText("Disability:");
+
+        disability.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

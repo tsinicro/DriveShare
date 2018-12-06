@@ -5,7 +5,7 @@ import java.awt.Color;
 public class TripConfirmation extends javax.swing.JFrame {
 
     /**
-     * Creates new form Passenger
+     * Creates new form TripConfirmation
      */
     TripConfirmation(Driver driver, Trip trip) {
         initComponents();

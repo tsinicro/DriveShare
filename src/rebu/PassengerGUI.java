@@ -26,11 +26,20 @@ public class PassengerGUI extends javax.swing.JFrame {
         destinationZipCode.setText(trip.getDestination().getAddress().getZipCode());
         destinationCountry.setSelectedItem(trip.getDestination().getAddress().getCountry());
         destinationDescription.setText(trip.getDestination().getDescription());
+        //Hide irrelevant fields
+        if (passenger.getTripList().isEmpty()) {
+            viewTrips.setVisible(false);
+        }
+        pack();
     }
 
     public PassengerGUI(Passenger passenger) {
         initComponents();
         this.passenger = passenger;
+        if (passenger.getTripList().isEmpty()) {
+            viewTrips.setVisible(false);
+        }
+        pack();
     }
 
     /**
@@ -77,6 +86,7 @@ public class PassengerGUI extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         destinationDescription = new javax.swing.JTextField();
         time = new javax.swing.JTextField();
+        viewTrips = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -140,6 +150,13 @@ public class PassengerGUI extends javax.swing.JFrame {
         jLabel17.setText("Country:");
 
         jLabel18.setText("Description:");
+
+        viewTrips.setText("View Trips");
+        viewTrips.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewTripsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -209,7 +226,8 @@ public class PassengerGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(originZipCode)))
+                        .addComponent(originZipCode))
+                    .addComponent(viewTrips, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -272,8 +290,10 @@ public class PassengerGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewTrips)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logOut)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -357,6 +377,11 @@ public class PassengerGUI extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_logOutActionPerformed
 
+    private void viewTripsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewTripsActionPerformed
+        new ViewTrips(passenger).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_viewTripsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -428,6 +453,7 @@ public class PassengerGUI extends javax.swing.JFrame {
     private javax.swing.JTextField originZipCode;
     private javax.swing.JButton submit;
     private javax.swing.JTextField time;
+    private javax.swing.JButton viewTrips;
     // End of variables declaration//GEN-END:variables
     private Passenger passenger;
 }
