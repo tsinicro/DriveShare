@@ -11,64 +11,113 @@ public class ViewVehicle extends javax.swing.JFrame {
         initComponents();
 
         //Hide all components
-        jLabel5.setVisible(false);
+        jLabel15.setVisible(false);
+        jLabel6.setVisible(false);
+        jLabel17.setVisible(false);
+        jLabel18.setVisible(false);
         carHeatedSeats.setVisible(false);
         AC.setVisible(false);
         cupholders.setVisible(false);
         aux.setVisible(false);
-        jLabel2.setVisible(false);
+
         jLabel3.setVisible(false);
-        height.setVisible(false);
         jLabel4.setVisible(false);
+        height.setVisible(false);
         weight.setVisible(false);
-        
+        jLabel5.setVisible(false);
+        jLabel19.setVisible(false);
         doorType.setVisible(false);
         disabilityAccessible.setVisible(false);
-        jLabel6.setVisible(false);
+
         jLabel7.setVisible(false);
-        useType.setVisible(false);
         jLabel8.setVisible(false);
+        useType.setVisible(false);
         turnType.setVisible(false);
         jLabel9.setVisible(false);
         maxSpeed.setVisible(false);
-        jLabel10.setVisible(false);
+
         jLabel11.setVisible(false);
-        bedType.setVisible(false);
         jLabel12.setVisible(false);
+        bedType.setVisible(false);
         stepHeight.setVisible(false);
+        jLabel20.setVisible(false);
         truckHeatedSeats.setVisible(false);
 
-        //Show relevant components
+        //Show and populate relevant components
         if (vehicle instanceof Car) {
-            jLabel1.setVisible(true);
+            jLabel15.setVisible(true);
+            jLabel6.setVisible(true);
+            jLabel17.setVisible(true);
+            jLabel18.setVisible(true);
             carHeatedSeats.setVisible(true);
             AC.setVisible(true);
             cupholders.setVisible(true);
             aux.setVisible(true);
+            Car car = (Car) vehicle;
+            if (car.getHeatedSeats()) {
+                carHeatedSeats.setText("yes");
+            } else {
+                carHeatedSeats.setText("no");
+            }
+            if (car.getAC()) {
+                AC.setText("yes");
+            } else {
+                AC.setText("no");
+            }
+            if (car.getCupholders()) {
+                cupholders.setText("yes");
+            } else {
+                cupholders.setText("no");
+            }
+            if (car.getAux()) {
+                aux.setText("yes");
+            } else {
+                aux.setText("no");
+            }
         } else if (vehicle instanceof Van) {
-            jLabel2.setVisible(true);
             jLabel3.setVisible(true);
-            height.setVisible(true);
             jLabel4.setVisible(true);
+            height.setVisible(true);
             weight.setVisible(true);
+            Van van = (Van) vehicle;
+            height.setText("" + van.getHeight());
+            height.setText("" + van.getWeight());
             jLabel5.setVisible(true);
+            jLabel19.setVisible(true);
             doorType.setVisible(true);
             disabilityAccessible.setVisible(true);
+            doorType.setText("" + van.getDoorType());
+            if (van.getDisabilityAccessible()) {
+                disabilityAccessible.setText("yes");
+            } else {
+                disabilityAccessible.setText("no");
+            }
         } else if (vehicle instanceof Tractor) {
-            jLabel6.setVisible(true);
             jLabel7.setVisible(true);
-            useType.setVisible(true);
             jLabel8.setVisible(true);
+            Tractor tractor = (Tractor) vehicle;
+            useType.setVisible(true);
             turnType.setVisible(true);
+            useType.setText(tractor.getUseType());
+            turnType.setText(tractor.getTurnType());
             jLabel9.setVisible(true);
             maxSpeed.setVisible(true);
+            maxSpeed.setText("" + tractor.getMaxSpeed());
         } else if (vehicle instanceof Truck) {
-            jLabel10.setVisible(true);
             jLabel11.setVisible(true);
-            bedType.setVisible(true);
             jLabel12.setVisible(true);
+            bedType.setVisible(true);
             stepHeight.setVisible(true);
-            truckHeatedSeats.setVisible(false);
+            Truck truck = (Truck) vehicle;
+            bedType.setText(truck.getBedType());
+            stepHeight.setText("" + truck.getStepHeight());
+            jLabel20.setVisible(true);
+            truckHeatedSeats.setVisible(true);
+            if (truck.getHeatedSeats()) {
+                truckHeatedSeats.setText("yes");
+            } else {
+                truckHeatedSeats.setText("no");
+            }
         }
         //Fit frame to content
         pack();
@@ -370,7 +419,7 @@ public class ViewVehicle extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
-       dispose();
+        dispose();
      }//GEN-LAST:event_closeActionPerformed
 
     /**
