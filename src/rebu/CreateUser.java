@@ -250,7 +250,7 @@ public class CreateUser extends javax.swing.JFrame {
             new Error("Password length is below 8.").setVisible(true);
             //Check for matching passwords
         } else if (!password.getText().equals(confirmPassword.getText())) {
-            new Error("Password confirmation doesn't match.").setVisible(true);
+            new Error("Password confirmation does not match.").setVisible(true);
             //Check for valid zip code
         } else if (zipCode.getText().length() != 5) {
             new Error("Zip code length is not 5.").setVisible(true);
@@ -262,22 +262,22 @@ public class CreateUser extends javax.swing.JFrame {
             try {
                 //Check for positive zip code
                 if (Integer.parseInt(zipCode.getText()) < 0) {
-                    new Error("Zip code isn't positive").setVisible(true);
+                    new Error("Zip code is not positive").setVisible(true);
                     return;
                 }
             } catch (NumberFormatException e) {
-                new Error("Zip code isn't numeric and whole.").setVisible(true);
+                new Error("Zip code is not numeric and whole.").setVisible(true);
                 return;
             }
             //Check for numeric phone
             try {
                 //Check for positive phone
                 if (Long.parseLong(phone.getText()) < 0) {
-                    new Error("Phone isn't positive.").setVisible(true);
+                    new Error("Phone is not positive.").setVisible(true);
                     return;
                 }
             } catch (NumberFormatException e) {
-                new Error("Phone isn't numeric.").setVisible(true);
+                new Error("Phone is not numeric.").setVisible(true);
                 return;
             }
             User user = new User(
@@ -295,7 +295,7 @@ public class CreateUser extends javax.swing.JFrame {
                     }
                 }
                 new CreateDriver(user).setVisible(true);
-                this.dispose();
+                dispose();
             } else if (isPassenger.isSelected()) {
                 //Check for duplicate email
                 for (Passenger passenger : passengerList) {
@@ -305,17 +305,17 @@ public class CreateUser extends javax.swing.JFrame {
                     }
                 }
                 new CreatePassenger(user).setVisible(true);
-                this.dispose();
+                dispose();
             } else {
                 //If account type isn't specified
-                new Error("Account type isn't selected.").setVisible(true);
+                new Error("Account type is not selected.").setVisible(true);
             }
         }
     }//GEN-LAST:event_nextActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         new LogIn().setVisible(true);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_backActionPerformed
 
     /**

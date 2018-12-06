@@ -1,9 +1,5 @@
 package rebu;
 
-/**
- *
- * @author smit3
- */
 public interface Print {
 
     //method meant to create a string for all information

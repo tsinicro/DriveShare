@@ -187,7 +187,7 @@ public class CreateDriver extends javax.swing.JFrame {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         new CreateUser(user, "driver").setVisible(true);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_backActionPerformed
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
@@ -205,27 +205,27 @@ public class CreateDriver extends javax.swing.JFrame {
             try {
                 //Check for positive capacity
                 if (Integer.parseInt(capacity.getText()) < 0) {
-                    new Error("Capacity isn't positive.").setVisible(true);
+                    new Error("Capacity is not positive.").setVisible(true);
                     return;
                 }
             } catch (NumberFormatException e) {
-                new Error("Capacity isn't numeric and whole.").setVisible(true);
+                new Error("Capacity is not numeric and whole.").setVisible(true);
                 return;
             }
             if (isCar.isSelected()) {
                 new CreateDriverVehicle(new Driver(user, license.getText(), new Vehicle(make.getText(), number.getText(), color.getText(), Integer.parseInt(capacity.getText()))), "car").setVisible(true);
-                this.dispose();
+                dispose();
             } else if (isVan.isSelected()) {
                 new CreateDriverVehicle(new Driver(user, license.getText(), new Vehicle(make.getText(), number.getText(), color.getText(), Integer.parseInt(capacity.getText()))), "van").setVisible(true);
-                this.dispose();
+                dispose();
             } else if (isTractor.isSelected()) {
                 new CreateDriverVehicle(new Driver(user, license.getText(), new Vehicle(make.getText(), number.getText(), color.getText(), Integer.parseInt(capacity.getText()))), "tractor").setVisible(true);
-                this.dispose();
+                dispose();
             } else if (isTruck.isSelected()) {
                 new CreateDriverVehicle(new Driver(user, license.getText(), new Vehicle(make.getText(), number.getText(), color.getText(), Integer.parseInt(capacity.getText()))), "truck").setVisible(true);
-                this.dispose();
+                dispose();
             } else {
-                new Error("Vehicle type isn't selected.").setVisible(true);
+                new Error("Vehicle type is not selected.").setVisible(true);
             }
         }
     }//GEN-LAST:event_nextActionPerformed

@@ -3,8 +3,8 @@ package rebu;
 public class Driver extends User implements Print {
 
     //Variables
-    String license;
-    Vehicle vehicle;
+    private String license;
+    private Vehicle vehicle;
 
     //Constructors
     public Driver() {

@@ -3,11 +3,11 @@ package rebu;
 public class Address implements Print {
 
     //Variables
-    String streetAddress;
-    String city;
-    String state;
-    String country;
-    String zipCode;
+    private String streetAddress;
+    private String city;
+    private String state;
+    private String country;
+    private String zipCode;
 
     //Constructors
     public Address() {

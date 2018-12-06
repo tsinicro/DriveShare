@@ -1,9 +1,11 @@
 package rebu;
 
+import java.util.ArrayList;
+
 public class Passenger extends User implements Print {
 
     //Variables
-    boolean disability;
+    private boolean disability;
 
     //Constructors
     public Passenger() {

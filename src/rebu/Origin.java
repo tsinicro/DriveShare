@@ -3,9 +3,9 @@ package rebu;
 public class Origin {
 
     //Variables
-    Location location;
-    String time;
-    String date;
+    private Location location;
+    private String time;
+    private String date;
 
     //Constructors
     public Origin() {

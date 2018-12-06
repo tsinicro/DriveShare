@@ -290,7 +290,7 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
             driver.setVehicle(new Car(driver.getVehicle(), carHeatedSeats.isSelected(), AC.isSelected(), cupholders.isSelected(), aux.isSelected()));
             driverList.add(driver);
             new LogIn().setVisible(true);
-            this.dispose();
+            dispose();
         } else if (vehicleType.equalsIgnoreCase("van")) {
             //Check for blank fields
             if (height.getText().equals("") || weight.getText().equals("") || doorType.getText().equals("")) {
@@ -300,28 +300,28 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
                 try {
                     //Check for positive height
                     if (Integer.parseInt(height.getText()) < 0) {
-                        new Error("Height isn't positive.").setVisible(true);
+                        new Error("Height is not positive.").setVisible(true);
                         return;
                     }
                 } catch (NumberFormatException e) {
-                    new Error("Height isn't numeric and whole.").setVisible(true);
+                    new Error("Height is not numeric and whole.").setVisible(true);
                     return;
                 }
                 //Check for numeric height
                 try {
                     //Check for positive weight
                     if (Integer.parseInt(weight.getText()) < 0) {
-                        new Error("Weight must be positive.").setVisible(true);
+                        new Error("Weight is not positive.").setVisible(true);
                         return;
                     }
                 } catch (NumberFormatException e) {
-                    new Error("Weight isn't numeric and whole.").setVisible(true);
+                    new Error("Weight is not numeric and whole.").setVisible(true);
                     return;
                 }
                 driver.setVehicle(new Van(driver.getVehicle(), Integer.parseInt(height.getText()), Integer.parseInt(weight.getText()), doorType.getText(), disabilityAccessible.isSelected()));
                 driverList.add(driver);
                 new LogIn().setVisible(true);
-                this.dispose();
+                dispose();
             }
         } else if (vehicleType.equalsIgnoreCase("tractor")) {
             //Check for blank fields
@@ -332,17 +332,17 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
                 try {
                     //Check for positive max speed
                     if (Integer.parseInt(maxSpeed.getText()) < 0) {
-                        new Error("Max speed isn't positive.").setVisible(true);
+                        new Error("Max speed is not positive.").setVisible(true);
                         return;
                     }
                 } catch (NumberFormatException e) {
-                    new Error("Max Speed isn't numeric and whole.").setVisible(true);
+                    new Error("Max Speed is not numeric and whole.").setVisible(true);
                     return;
                 }
                 driver.setVehicle(new Tractor(driver.getVehicle(), useType.getText(), turnType.getText(), Integer.parseInt(maxSpeed.getText())));
                 driverList.add(driver);
                 new LogIn().setVisible(true);
-                this.dispose();
+                dispose();
             }
         } else if (vehicleType.equalsIgnoreCase("truck")) {
             //Check for blank fields
@@ -353,21 +353,21 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
                 try {
                     //Check for positive step height
                     if (Integer.parseInt(stepHeight.getText()) < 0) {
-                        new Error("Step height isn't positive.").setVisible(true);
+                        new Error("Step height is not positive.").setVisible(true);
                         return;
                     }
                 } catch (NumberFormatException e) {
-                    new Error("Step height isn't numeric and whole.").setVisible(true);
+                    new Error("Step height is not numeric and whole.").setVisible(true);
                     return;
                 }
                 driver.setVehicle(new Truck(driver.getVehicle(), bedType.getText(), Integer.parseInt(stepHeight.getText()), truckHeatedSeats.isSelected()));
                 driverList.add(driver);
                 new LogIn().setVisible(true);
-                this.dispose();
+                dispose();
             }
         } else {
             new LogIn().setVisible(true);
-            this.dispose();
+            dispose();
         }
      }//GEN-LAST:event_submitActionPerformed
 
@@ -440,6 +440,6 @@ public class CreateDriverVehicle extends javax.swing.JFrame {
     private javax.swing.JTextField useType;
     private javax.swing.JTextField weight;
     // End of variables declaration//GEN-END:variables
-    Driver driver;
-    String vehicleType;
+    private Driver driver;
+    private String vehicleType;
 }

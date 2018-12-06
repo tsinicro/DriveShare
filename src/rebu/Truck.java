@@ -3,10 +3,10 @@ package rebu;
 public class Truck extends Vehicle {
 
     //Variables
-    String bedType;
-    int stepHeight;
-    boolean heatedSeats;
-    final String vehicleType = "truck";
+    private String bedType;
+    private int stepHeight;
+    private boolean heatedSeats;
+    private final String vehicleType = "truck";
 
     //Constructors
     public Truck() {

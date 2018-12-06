@@ -3,8 +3,8 @@ package rebu;
 public class Name implements Print {
 
     //variables
-    String firstName;
-    String lastName;
+    private String firstName;
+    private String lastName;
 
     //constructor
     public Name() {

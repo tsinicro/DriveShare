@@ -124,7 +124,7 @@ public class DriverGUI extends javax.swing.JFrame {
         } else if (date.getText().length() != 10 || date.getText().indexOf('/') != 2 || date.getText().indexOf('/', 3) != 5) {
             new Error("Date not in format DD/MM/YYYY.").setVisible(true);
         } else {
-            //This checks dates for numeric sense
+            //Check date for numeric sense
             try {
                 if (!(Integer.parseInt(date.getText().substring(0, 2)) > 0 && Integer.parseInt(date.getText().substring(0, 2)) <= 31
                         && Integer.parseInt(date.getText().substring(3, 5)) > 0 && Integer.parseInt(date.getText().substring(3, 5)) <= 12
@@ -139,14 +139,14 @@ public class DriverGUI extends javax.swing.JFrame {
             origin.setDate(date.getText());
             origin.getLocation().getAddress().setCity(city.getText());
             origin.getLocation().getAddress().setState(state.getSelectedItem().toString());
-            new PassengerAvailability(driver, origin).setVisible(true);
-            this.dispose();
+            new TripSelection(driver, origin).setVisible(true);
+            dispose();
         }
     }//GEN-LAST:event_submitActionPerformed
 
     private void logOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutActionPerformed
         new LogIn().setVisible(true);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_logOutActionPerformed
 
     /**
@@ -195,5 +195,5 @@ public class DriverGUI extends javax.swing.JFrame {
     private javax.swing.JComboBox state;
     private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
-    Driver driver;
+    private Driver driver;
 }

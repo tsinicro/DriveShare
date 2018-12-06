@@ -3,9 +3,9 @@ package rebu;
 public class Tractor extends Vehicle {
 
     //Variables
-    String useType;
-    String turnType;
-    int maxSpeed;
+    private String useType;
+    private String turnType;
+    private int maxSpeed;
 
     //Constructors
     public Tractor() {

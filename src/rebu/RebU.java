@@ -1,17 +1,14 @@
 package rebu;
-//Proposed to do
 
-//PassengerGUI
-//PassengerAvailability
-//DriverConfirmation (map)
-//ViewTrips (status) (removeTrip) (map)
-//Remove DriverAvailability
-//Remove PassengerConfirmation
 import java.util.ArrayList;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import sun.applet.Main;
 
 public class RebU {
 
-    //Variables
+    //Shared variables
     public static ArrayList<Passenger> passengerList = new ArrayList<Passenger>();
     public static ArrayList<Driver> driverList = new ArrayList<Driver>();
     public static ArrayList<Trip> tripList = new ArrayList<Trip>();
@@ -28,17 +25,19 @@ public class RebU {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RebU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RebU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RebU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RebU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
-        //Begin GUI
         createTestUsers();
+        playMusic();
+
+        //Begin GUI
         new LogIn().setVisible(true);
     }
 
@@ -63,5 +62,23 @@ public class RebU {
                 "1234567890",
                 new Car("Rolls-Royce", "AAAA0001", "red", 4, false, false, false, false)
         ));
+
+    }
+
+    //Plays "I'm the map" (courtesy of stackoverflow)
+    private static synchronized void playMusic() {
+        new Thread(new Runnable() {
+            public void run() {
+                try {
+                    Clip clip = AudioSystem.getClip();
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                            Main.class.getResourceAsStream("/rebu/res/iTM.wav"));
+                    clip.open(inputStream);
+                    clip.start();
+                } catch (Exception e) {
+                    System.err.println(e.getMessage());
+                }
+            }
+        }).start();
     }
 }

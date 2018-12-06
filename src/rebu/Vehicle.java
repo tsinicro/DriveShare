@@ -3,11 +3,11 @@ package rebu;
 public class Vehicle implements Print {
 
     //Variables
-    String make;
-    String number;
-    String color;
-    int capacity;
-    final String type = "";
+    protected String make;
+    protected String number;
+    protected String color;
+    protected int capacity;
+    protected final String type = "";
 
     //Constructors
     public Vehicle() {

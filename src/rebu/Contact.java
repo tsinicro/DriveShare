@@ -3,8 +3,8 @@ package rebu;
 public class Contact implements Print {
 
     //Variables
-    String phone;
-    String email;
+    private String phone;
+    private String email;
 
     //Constructors
     public Contact() {

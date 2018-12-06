@@ -3,23 +3,58 @@ package rebu;
 public class Trip implements Print {
 
     //Variables
-    Origin origin;
-    Address destination;
-    Passenger passenger;
-    Driver driver;
-    int numberPassengers;
+    private Origin origin;
+    private Location destination;
+    private Passenger passenger;
+    private Driver driver;
+    private int numberPassengers;
 
-    //Getters
-    public float getMiles() {
-        //Map should calculate this
-        return 0;
+    //These work like trackers to match a trip to an internal trip
+    int passengerID;
+
+    //Constructors
+    public Trip(Origin origin, Location destination, Passenger passenger, Driver driver, int numberPassengers, int passengerID) {
+        this.origin = origin;
+        this.destination = destination;
+        this.passenger = passenger;
+        this.driver = driver;
+        this.numberPassengers = numberPassengers;
+        this.passengerID = passengerID;
     }
 
+    public Trip(Origin origin, Location destination, Passenger passenger, Driver driver, int numberPassengers) {
+        this.origin = origin;
+        this.destination = destination;
+        this.passenger = passenger;
+        this.driver = driver;
+        this.numberPassengers = numberPassengers;
+        this.passengerID = 0;
+    }
+
+    public Trip(Origin origin, Location destination, Passenger passenger, int numberPassengers) {
+        this.origin = origin;
+        this.destination = destination;
+        this.passenger = passenger;
+        this.driver = new Driver();
+        this.numberPassengers = numberPassengers;
+        this.passengerID = 0;
+    }
+
+    public Trip() {
+        this.origin = new Origin();
+        this.destination = new Location();
+        this.passenger = new Passenger();
+        this.driver = new Driver();
+        this.numberPassengers = 0;
+        this.passengerID = 0;
+    }
+
+    //Getters
     public Origin getOrigin() {
         return origin;
     }
 
-    public Address getDestination() {
+    public Location getDestination() {
         return destination;
     }
 
@@ -35,12 +70,16 @@ public class Trip implements Print {
         return numberPassengers;
     }
 
+    public int getPassengerID() {
+        return passengerID;
+    }
+
     //Setters
     public void setOrigin(Origin origin) {
         this.origin = origin;
     }
 
-    public void setDestination(Address destination) {
+    public void setDestination(Location destination) {
         this.destination = destination;
     }
 
@@ -56,13 +95,18 @@ public class Trip implements Print {
         this.numberPassengers = numberPassengers;
     }
 
+    public void setPassengerID(int passengerID) {
+        this.passengerID = passengerID;
+    }
+
+
     //Print methods
     public String getFull() {
-        return driver.getFull() + " picking up " + passenger.getFull() + "/n" +
-       "Pickup Time: " + origin.getDate() + " " + origin.getTime() + "/n" +
-       "Number of Passengers: " + numberPassengers;
+        return driver.getFull() + " picking up " + passenger.getFull() + "/n"
+                + "Pickup Time: " + origin.getDate() + " " + origin.getTime() + "/n"
+                + "Number of Passengers: " + numberPassengers;
     }
-    
+
     public void print() {
         System.out.println(getFull());
     }

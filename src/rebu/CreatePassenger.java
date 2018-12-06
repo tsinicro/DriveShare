@@ -79,12 +79,12 @@ public class CreatePassenger extends javax.swing.JFrame {
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         RebU.passengerList.add(new Passenger(user, disability.isSelected()));
         new LogIn().setVisible(true);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_submitActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         new CreateUser(user, "passenger").setVisible(true);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_backActionPerformed
 
     /**
@@ -128,5 +128,5 @@ public class CreatePassenger extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
-    User user;
+    private User user;
 }

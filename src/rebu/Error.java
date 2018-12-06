@@ -92,7 +92,7 @@ public class Error extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Error("Test of an error message.").setVisible(true);
+                new Error("").setVisible(true);
             }
         });
     }

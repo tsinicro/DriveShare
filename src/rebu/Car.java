@@ -3,10 +3,10 @@ package rebu;
 public class Car extends Vehicle {
 
     //Variables
-    boolean heatedSeats;
-    boolean AC;
-    boolean cupholders;
-    boolean aux;
+    private boolean heatedSeats;
+    private boolean AC;
+    private boolean cupholders;
+    private boolean aux;
 
     //Constructors
     public Car() {
@@ -24,7 +24,7 @@ public class Car extends Vehicle {
         this.cupholders = cupholders;
         this.aux = aux;
     }
-    
+
     public Car(Vehicle vehicle, boolean heatedSeats, boolean AC, boolean cupholders, boolean aux) {
         super(vehicle);
         this.heatedSeats = heatedSeats;
@@ -66,5 +66,4 @@ public class Car extends Vehicle {
     public void setAux(boolean aux) {
         this.aux = aux;
     }
-
 }

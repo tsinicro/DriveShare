@@ -109,13 +109,13 @@ public class ForgotPassword extends javax.swing.JFrame {
         } else {
             //Pretend it sent out an email here
             new LogIn().setVisible(true);
-            this.dispose();
+            dispose();
         }
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         new LogIn().setVisible(true);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
     /**
