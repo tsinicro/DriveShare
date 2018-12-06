@@ -24,14 +24,14 @@ public class LogIn extends javax.swing.JFrame {
         accountTypeSelector = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        emailText = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         forgotPasswordBtn = new javax.swing.JButton();
         createBtn = new javax.swing.JButton();
         loginBtn = new javax.swing.JButton();
         isDriver = new javax.swing.JRadioButton();
         isPassenger = new javax.swing.JRadioButton();
-        passwordText = new javax.swing.JPasswordField();
+        password = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
 
         accountTypeSelector.add(isDriver); accountTypeSelector.add(isPassenger);
@@ -89,7 +89,7 @@ public class LogIn extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(loginBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(createBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -100,7 +100,7 @@ public class LogIn extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(emailText, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)))
                 .addContainerGap())
         );
@@ -113,12 +113,12 @@ public class LogIn extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailText, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(isDriver)
@@ -148,47 +148,51 @@ public class LogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_forgotPasswordBtnActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-        if (isDriver.isSelected()) {
-            Driver driver = new Driver();
-            boolean found = false;
-            for (int i = 0; i < driverList.size() && found == false; i++) {
-                //Check for matching credentials
-                if (driverList.get(i).getContact().getEmail().equalsIgnoreCase(emailText.getText()) && driverList.get(i).getPassword().equals(passwordText.getText())) {
-                    //Assign global driver
-                    driver = driverList.get(i);
-                    found = true;
-                    break;
-                }
-            }
-            if (found == true) {
-                //Begin driver GUI
-                new DriverGUI(driver).setVisible(true);
-                dispose();
-            } else {
-                new Error("Account not found.").setVisible(true);
-            }
-        } else if (isPassenger.isSelected()) {
-            Passenger passenger = new Passenger();
-            boolean found = false;
-            for (int i = 0; i < passengerList.size() && found == false; i++) {
-                //Check for matching credentials
-                if (passengerList.get(i).getContact().getEmail().equalsIgnoreCase(emailText.getText()) && passengerList.get(i).getPassword().equals(passwordText.getText())) {
-                    //Assign global passenger
-                    passenger = passengerList.get(i);
-                    found = true;
-                    break;
-                }
-            }
-            if (found == true) {
-                //Begin passenger GUI
-                new PassengerGUI(passenger).setVisible(true);
-                dispose();
-            } else {
-                new Error("Account not found.").setVisible(true);
-            }
+        if (email.getText().equals("") || password.getText().equals("")) {
+            new Error("Fields are blank.").setVisible(true);
         } else {
-            //If account type isn't specified
-            new Error("Account type isn't selected.").setVisible(true);
+            if (isDriver.isSelected()) {
+                Driver driver = new Driver();
+                boolean found = false;
+                for (int i = 0; i < driverList.size() && found == false; i++) {
+                    //Check for matching credentials
+                    if (driverList.get(i).getContact().getEmail().equalsIgnoreCase(email.getText()) && driverList.get(i).getPassword().equals(password.getText())) {
+                        //Assign global driver
+                        driver = driverList.get(i);
+                        found = true;
+                        break;
+                    }
+                }
+                if (found == true) {
+                    //Begin driver GUI
+                    new DriverGUI(driver).setVisible(true);
+                    dispose();
+                } else {
+                    new Error("Account not found.").setVisible(true);
+                }
+            } else if (isPassenger.isSelected()) {
+                Passenger passenger = new Passenger();
+                boolean found = false;
+                for (int i = 0; i < passengerList.size() && found == false; i++) {
+                    //Check for matching credentials
+                    if (passengerList.get(i).getContact().getEmail().equalsIgnoreCase(email.getText()) && passengerList.get(i).getPassword().equals(password.getText())) {
+                        //Assign global passenger
+                        passenger = passengerList.get(i);
+                        found = true;
+                        break;
+                    }
+                }
+                if (found == true) {
+                    //Begin passenger GUI
+                    new PassengerGUI(passenger).setVisible(true);
+                    dispose();
+                } else {
+                    new Error("Account not found.").setVisible(true);
+                }
+            } else {
+                //If account type isn't specified
+                new Error("Account type isn't selected.").setVisible(true);
+            }
         }
     }//GEN-LAST:event_loginBtnActionPerformed
 
@@ -231,7 +235,7 @@ public class LogIn extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup accountTypeSelector;
     private javax.swing.JButton createBtn;
-    private javax.swing.JTextField emailText;
+    private javax.swing.JTextField email;
     private javax.swing.JButton forgotPasswordBtn;
     private javax.swing.JRadioButton isDriver;
     private javax.swing.JRadioButton isPassenger;
@@ -240,6 +244,6 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JButton loginBtn;
-    private javax.swing.JPasswordField passwordText;
+    private javax.swing.JPasswordField password;
     // End of variables declaration//GEN-END:variables
 }
