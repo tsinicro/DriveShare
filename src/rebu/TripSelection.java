@@ -19,7 +19,7 @@ public class TripSelection extends javax.swing.JFrame {
                     && trip.getOrigin().getLocation().getAddress().getCity().equals(origin.getLocation().getAddress().getCity())
                     && trip.getNumberPassengers() <= driver.getVehicle().getCapacity()) {
 
-                if (trip.getPassenger().getDisability() && trip.getDriver().getVehicle().getType().equalsIgnoreCase("van")) {
+                if (trip.getPassenger().getDisability() && trip.getDriver().getVehicle() instanceof Van) {
                     Van van = (Van) trip.getDriver().getVehicle();
                     if (!van.getDisabilityAccessible()) {
                         continue;

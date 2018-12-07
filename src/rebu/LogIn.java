@@ -148,6 +148,7 @@ public class LogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_forgotPasswordBtnActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        //Check for blank fields
         if (email.getText().equals("") || password.getText().equals("")) {
             new Error("Fields are blank.").setVisible(true);
         } else {
@@ -222,12 +223,12 @@ public class LogIn extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LogIn().setVisible(true);
-            }  
+            }
         });
     }
 

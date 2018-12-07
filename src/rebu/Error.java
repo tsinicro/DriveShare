@@ -1,9 +1,5 @@
 package rebu;
 
-/**
- *
- * @author jenki
- */
 public class Error extends javax.swing.JFrame {
 
     /**

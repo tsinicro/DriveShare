@@ -6,7 +6,6 @@ public class Truck extends Vehicle {
     private String bedType;
     private int stepHeight;
     private boolean heatedSeats;
-    private final String vehicleType = "truck";
 
     //Constructors
     public Truck() {
@@ -22,7 +21,7 @@ public class Truck extends Vehicle {
         this.stepHeight = stepHeight;
         this.heatedSeats = heatedSeats;
     }
-    
+
     public Truck(Vehicle vehicle, String bedType, int stepHeight, boolean heatedSeats) {
         super(vehicle);
         this.bedType = bedType;
@@ -44,7 +43,7 @@ public class Truck extends Vehicle {
     }
 
     //Setters
-    public void setBedType(String bedtype) {
+    public void setBedType(String bedType) {
         this.bedType = bedType;
     }
 

@@ -1,8 +1,6 @@
 package rebu;
 
-// This is the location class which:
-// Implements the Print Interface
-
+// This is the location class which implements the Print Interface
 public class Location implements Print {
 
     //Variables
@@ -21,7 +19,7 @@ public class Location implements Print {
     }
 
     //Getters
-    //get Address
+    // get Address
     public Address getAddress() {
         return address;
     }

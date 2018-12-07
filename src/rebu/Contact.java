@@ -1,19 +1,18 @@
 package rebu;
 
 // This is the Contact class which implements the Print interface
-
 public class Contact implements Print {
 
     //Variables
     private String phone;
     private String email;
 
-    // Initialization
+    //Initialization
     public Contact() {
         phone = "";
         email = "";
     }
-    
+
     //Constructors
     //Instantiation of Contact variables
     public Contact(String phone, String email) {
@@ -26,7 +25,7 @@ public class Contact implements Print {
     public String getPhone() {
         return phone;
     }
-    
+
     //get email 
     public String getEmail() {
         return email;

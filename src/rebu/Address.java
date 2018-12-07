@@ -18,8 +18,8 @@ public class Address implements Print {
         country = "";
         zipCode = "";
     }
-    
-   // Initialization 
+
+    //Initialization 
     public Address(String streetAddress) {
         this.streetAddress = streetAddress;
         city = "";
@@ -28,7 +28,7 @@ public class Address implements Print {
         zipCode = "";
     }
 
-    // Instantiation of the Address variables 
+    //Instantiation of the Address variables 
     public Address(String streetAddress, String city, String state, String country, String zipCode) {
         this.streetAddress = streetAddress;
         this.city = city;
@@ -42,13 +42,13 @@ public class Address implements Print {
     public String getStreetAddress() {
         return streetAddress;
     }
-    
-    //Get City
+
+    // Get City
     public String getCity() {
         return city;
     }
 
-    //Get State
+    // Get State
     public String getState() {
         return state;
     }
@@ -57,7 +57,7 @@ public class Address implements Print {
     public String getCountry() {
         return country;
     }
-    
+
     // Get Zip Code 
     public String getZipCode() {
         return zipCode;
@@ -78,7 +78,7 @@ public class Address implements Print {
     public void setState(String state) {
         this.state = state;
     }
-    
+
     // Set Country
     public void setCountry(String country) {
         this.country = country;

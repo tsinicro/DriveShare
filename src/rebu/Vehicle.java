@@ -7,7 +7,6 @@ public class Vehicle implements Print {
     protected String number;
     protected String color;
     protected int capacity;
-    protected final String type = "";
 
     //Constructors
     public Vehicle() {
@@ -23,9 +22,9 @@ public class Vehicle implements Print {
         this.color = color;
         this.capacity = capacity;
     }
-    
+
     public Vehicle(Vehicle vehicle) {
-        make= vehicle.getMake();
+        make = vehicle.getMake();
         number = vehicle.getNumber();
         color = vehicle.getColor();
         capacity = vehicle.getCapacity();
@@ -48,10 +47,6 @@ public class Vehicle implements Print {
         return capacity;
     }
 
-    public String getType() {
-        return type;
-    }
-
     //Setters
     public void setMake(String vehicleMake) {
         this.make = vehicleMake;
@@ -71,7 +66,7 @@ public class Vehicle implements Print {
 
     //Print methods
     public String getFull() {
-        return color + " " + make + " " + type;
+        return color + " " + make + " " + getClass();
     }
 
     public void print() {

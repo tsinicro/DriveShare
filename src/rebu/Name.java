@@ -1,11 +1,9 @@
 package rebu;
 
-// This is the Name class which:
-// Implements the Print interface 
-
+// This is the Name class which implements the Print interface 
 public class Name implements Print {
 
-    //variables
+    //Variables
     private String firstName;
     private String lastName;
 
@@ -27,23 +25,22 @@ public class Name implements Print {
         return firstName;
     }
 
-      public String getLastName() {
+    public String getLastName() {
         return lastName;
     }
-    
-      
+
     // setters
-      //set first name
+    //set first name
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    // set last name
+    //set last name
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    //PRINT methods
+    //Print methods
     public String getFull() {
         String n = (this.getFirstName() + " " + this.getLastName());
         return n;

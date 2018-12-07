@@ -99,7 +99,6 @@ public class Trip implements Print {
         this.passengerID = passengerID;
     }
 
-
     //Print methods
     public String getFull() {
         return driver.getFull() + " picking up " + passenger.getFull() + "/n"
@@ -110,10 +109,9 @@ public class Trip implements Print {
     public void print() {
         System.out.println(getFull());
     }
-    
-    public String mapString(){
-        String wSpaces = destination.address.getStreetAddress() + "," + destination.address.getCity() + "," + destination.address.getState();
-        return wSpaces.replaceAll(" ", "+");
-    }
 
+    //Other methods
+    public String mapString() {
+        return destination.address.getStreetAddress() + "," + destination.address.getCity() + "," + destination.address.getState().replaceAll(" ", "+");
+    }
 }

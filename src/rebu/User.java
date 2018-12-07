@@ -52,7 +52,7 @@ public class User implements Print {
     public Contact getContact() {
         return contact;
     }
-    
+
     public ArrayList<Trip> getTripList() {
         return tripList;
     }
@@ -73,7 +73,7 @@ public class User implements Print {
     public void setContact(Contact contact) {
         this.contact = contact;
     }
-    
+
     public void setTripList(ArrayList<Trip> tripList) {
         this.tripList = tripList;
     }

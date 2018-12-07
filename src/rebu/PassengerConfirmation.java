@@ -17,10 +17,10 @@ public class PassengerConfirmation extends javax.swing.JFrame {
         this.passenger = trip.getPassenger();
         this.trip = trip;
         try{
-            BufferedImage img = ImageIO.read(new URL("https://maps.googleapis.com/maps/api/staticmap?center=" + trip.mapString() + "&zoom=16&size=197x112&maptype=hybrid&markers=size:mid|color:red|" + trip.mapString() +"&key=AIzaSyC-EHfXESFg0oXRMUg4ZCPXvjKA8uAdzJw"));
-            jLabel1.setIcon(new ImageIcon(img));
-        } catch (Exception ex) {
-            System.out.println("Error!" + ex);
+            BufferedImage img = ImageIO.read(new URL("https://maps.googleapis.com/maps/api/staticmap?center=" + trip.mapString() + "&zoom=16&size=250x250&maptype=hybrid&markers=size:mid|color:red|" + trip.mapString() +"&key=AIzaSyC-EHfXESFg0oXRMUg4ZCPXvjKA8uAdzJw"));
+            map.setIcon(new ImageIcon(img));
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
 
@@ -36,7 +36,7 @@ public class PassengerConfirmation extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         confirm = new javax.swing.JButton();
         back = new javax.swing.JToggleButton();
-        jLabel1 = new javax.swing.JLabel();
+        map = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,22 +64,23 @@ public class PassengerConfirmation extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(confirm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(back, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 53, Short.MAX_VALUE))
+                    .addComponent(map, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(confirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(map, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(back)
@@ -139,8 +140,8 @@ public class PassengerConfirmation extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton back;
     private javax.swing.JButton confirm;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel map;
     // End of variables declaration//GEN-END:variables
     private Passenger passenger;
     private Trip trip;

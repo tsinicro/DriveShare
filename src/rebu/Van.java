@@ -7,7 +7,6 @@ public class Van extends Vehicle {
     private int weight;
     private String doorType;
     private boolean disabilityAccessible;
-    private final String vehicleType = "van";
 
     //Constructors
     public Van() {

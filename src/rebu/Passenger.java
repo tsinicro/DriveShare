@@ -2,11 +2,7 @@ package rebu;
 
 import java.util.ArrayList;
 
-
-// This is the Passenger class which:
-// Inherits from the User class 
-// Implements the Print interface 
-
+// This is the Passenger class which inherits from the User class and implements the Print interface 
 public class Passenger extends User implements Print {
 
     //Variables

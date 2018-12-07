@@ -1,8 +1,6 @@
 package rebu;
 
-// This is the Origin Class
-// It contains the variables for the trip origin 
-
+// This is the Origin Class. It contains the variables for the trip origin.
 public class Origin {
 
     //Variables
@@ -29,7 +27,7 @@ public class Origin {
     public Location getLocation() {
         return location;
     }
-    
+
     // get time of departure 
     public String getTime() {
         return time;

@@ -19,7 +19,7 @@ public class Car extends Vehicle {
         aux = false;
     }
 
-    // Instantiation for Car 
+    //Instantiation for Car 
     public Car(String make, String number, String color, int capacity, boolean heatedSeats, boolean AC, boolean cupholders, boolean aux) {
         super(make, number, color, capacity);
         this.heatedSeats = heatedSeats;
@@ -28,7 +28,6 @@ public class Car extends Vehicle {
         this.aux = aux;
     }
 
-  
     public Car(Vehicle vehicle, boolean heatedSeats, boolean AC, boolean cupholders, boolean aux) {
         super(vehicle);
         this.heatedSeats = heatedSeats;
@@ -47,7 +46,7 @@ public class Car extends Vehicle {
     public boolean getAC() {
         return AC;
     }
-    
+
     // get cup holder (T/F)
     public boolean getCupholders() {
         return cupholders;
@@ -59,7 +58,7 @@ public class Car extends Vehicle {
     }
 
     //Setters
-    //set heated seats 
+    // set heated seats 
     public void setHeatedSeats(boolean heatedSeats) {
         this.heatedSeats = heatedSeats;
     }
@@ -73,7 +72,7 @@ public class Car extends Vehicle {
     public void setCupholders(boolean cupholders) {
         this.cupholders = cupholders;
     }
-    
+
     // set Aux 
     public void setAux(boolean aux) {
         this.aux = aux;
