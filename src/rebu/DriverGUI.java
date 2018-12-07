@@ -12,6 +12,7 @@ public class DriverGUI extends javax.swing.JFrame {
         if (driver.getTripList().isEmpty()) {
             viewTrips.setVisible(false);
         }
+        //Fit to components
         pack();
     }
 
@@ -25,6 +26,7 @@ public class DriverGUI extends javax.swing.JFrame {
         if (driver.getTripList().isEmpty()) {
             viewTrips.setVisible(false);
         }
+        //Fit to components
         pack();
     }
 
