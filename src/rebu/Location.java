@@ -4,8 +4,8 @@ package rebu;
 public class Location implements Print {
 
     //Variables
-    public Address address;
-    public String description;
+    private Address address;
+    private String description;
 
     //Constructors
     public Location(Address address, String description) {

@@ -112,6 +112,6 @@ public class Trip implements Print {
 
     //Other methods
     public String mapString() {
-        return destination.address.getStreetAddress() + "," + destination.address.getCity() + "," + destination.address.getState().replaceAll(" ", "+");
+        return destination.getAddress().getStreetAddress() + "," + destination.getAddress().getCity() + "," + destination.getAddress().getState().replaceAll(" ", "+");
     }
 }
