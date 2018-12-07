@@ -38,7 +38,7 @@ public class RebU {
 
         //Begin GUI
         new LogIn().setVisible(true);
-        
+
     }
 
     //Create users for use in testing
@@ -72,7 +72,7 @@ public class RebU {
                 try {
                     Clip clip = AudioSystem.getClip();
                     AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                            Main.class.getResourceAsStream("/rebu/res/iTM.wav"));
+                            RebU.class.getResourceAsStream("/resources/iTM.wav"));
                     clip.open(inputStream);
                     clip.start();
                 } catch (Exception e) {
